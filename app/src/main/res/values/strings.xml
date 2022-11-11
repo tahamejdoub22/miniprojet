@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name"><![CDATA[SEARCH&RECYCLE]]></string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="email">Email..</string>
+    <string name="search_recycle"><![CDATA[SEARCH&RECYCLE]]></string>
+    <string name="find_your_nearest_recycle_station">Find your nearest recycle station</string>
+    <string name="inscription">inscription</string>
+    <string name="connextion">connextion</string>
+    <string name="amet_minim_mollit_non_deserunt_ullamco_est_sit_aliqua_dolor_do_amet_sint_velit_officia_consequat_duis_enim_velit_mollit_exercitation_veniam_consequat_sunt_nostrud_amet">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</string>
+    <string name="start">start</string>
+    <string name="create_account">Create Account</string>
+    <string name="or_signin_with">Or signin with</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="register">Register</string>
+    <string name="required">Required</string>
+</resources>

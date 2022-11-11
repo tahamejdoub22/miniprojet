@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="btnSolidRoundedOutline">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="android:background">@drawable/rectangle_gradient_s_green_400_e_green_800_radius_22</item>
+    </style>
+    <style name="btnSolidRoundedOutline1">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="android:background">@drawable/rectangle_gradient_s_green_400_e_green_radius_30</item>
+    </style>
+    <style name="txtInterbold20">
+        <item name="android:textColor">@color/gray_901</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="btnSolidRounded">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="android:background">@drawable/rectangle_bg_white</item>
+    </style>
+    <style name="btnSolidRoundedOutline_1">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="android:background">@drawable/rectangle_bg_gris</item>
+    </style>
+$</resources>
