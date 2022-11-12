@@ -1,10 +1,16 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.example.myapplication.data.model.UserRequest
+import com.example.myapplication.data.retrofit.APIClient
+import com.example.myapplication.data.retrofit.RetrofitClient
 import com.example.myapplication.databinding.ActivityLoginBinding
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.google.android.material.textfield.TextInputLayout
@@ -15,10 +21,17 @@ class loginActivity : AppCompatActivity() {
     private lateinit var binding:ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         emailFocusListener()
         passwordFocusListener()
+        binding.loginButton.setOnClickListener {
+
+            var email = binding.loginInput.text.toString()
+            var password = binding.passwordInput.text.toString()
+            loginAction(email,password)
+        }
+
 
     }
     private fun emailFocusListener(){
@@ -68,4 +81,29 @@ binding.loginInput.setOnFocusChangeListener { v, focused ->
             return "Must Contain 1 Special character(@#\$%&^+=)"
         }
         return null}
+    fun loginAction(email: String, password: String) {
+        var retrofit = RetrofitClient.getInstance()
+        var apiInterface = retrofit.create(APIClient::class.java)
+        lifecycleScope.launchWhenCreated {
+            try {
+                val user = UserRequest(email,password)
+                val response = apiInterface.signIn(user)
+
+                if(response.isSuccessful()){
+                    Log.d("LoggingActivity",response.body().toString())
+                    //change informationactivity to homeactivity wala haja hakka
+                    val intent = Intent(this@loginActivity, informationActivity::class.java)
+                    startActivity(intent)
+                }
+                else {
+                    Log.d("LoggingActivity","errorReponse")
+                }
+            } catch (ex: Exception) {
+                Log.d("LoggingActivity", "error")
+
+            }
+
+        }
+    }
+
 }

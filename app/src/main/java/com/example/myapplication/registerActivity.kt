@@ -1,8 +1,14 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
+import androidx.lifecycle.lifecycleScope
+import com.example.myapplication.data.model.UserSignUpRequest
+import com.example.myapplication.data.retrofit.APIClient
+import com.example.myapplication.data.retrofit.RetrofitClient
 import com.example.myapplication.databinding.ActivityLoginBinding
 import com.example.myapplication.databinding.RegisterBinding
 
@@ -18,6 +24,12 @@ class registerActivity : AppCompatActivity() {
         emailFocusListener()
         passwordFocusListener()
         confirmpasswordFocusListener()
+        binding.registerButton.setOnClickListener {
+
+            var email = binding.loginInput.text.toString()
+            var password = binding.passwordInput.text.toString()
+            registerAction(email,password)
+        }
     }
     private fun emailFocusListener(){
         binding.loginInput.setOnFocusChangeListener { v, focused ->
@@ -83,5 +95,31 @@ class registerActivity : AppCompatActivity() {
             return "password not the same"
         }
         return null}
+    fun registerAction(email: String, password: String){
+        var retrofit = RetrofitClient.getInstance()
+        var apiInterface = retrofit.create(APIClient::class.java)
+        lifecycleScope.launchWhenCreated {
+            try {
+                val user = UserSignUpRequest(email,password,role="entreprise")
+                val response = apiInterface.singUp(user)
+
+                if(response.isSuccessful()){
+                    Log.d("RegisterActivity",response.body().toString())
+                    //change informationactivity to homeactivity wala haja hakka
+                    val intent = Intent(this@registerActivity, informationActivity::class.java)
+                    startActivity(intent)
+                }
+                else {
+                    Log.d("registerActivity","errorReponse")
+                }
+            } catch (ex: Exception) {
+                Log.d("registerActivity", "error")
+
+            }
+
+        }
+
+
+    }
 
 }
