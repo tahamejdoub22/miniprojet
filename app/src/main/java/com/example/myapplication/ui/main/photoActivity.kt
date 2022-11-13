@@ -1,9 +1,6 @@
 package com.example.myapplication.ui.main
 
-import android.Manifest
 import android.annotation.SuppressLint
-import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.util.Size
@@ -11,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.video.Recording
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleOwner
@@ -26,7 +22,6 @@ import com.google.mlkit.vision.objects.ObjectDetection
 import com.google.mlkit.vision.objects.ObjectDetector
 import com.google.mlkit.vision.objects.custom.CustomObjectDetectorOptions
 import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
 
 
 /**
@@ -48,16 +43,14 @@ class photoActivity:  AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
-       binding= DataBindingUtil.setContentView(this, R.layout.activity_photo)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_photo)
         // Request camera permissions
-        if (allPermissionsGranted()) {
-            cameraProviderFuture=ProcessCameraProvider.getInstance(this)
-            cameraProviderFuture.addListener({
-                val cameraProvider =cameraProviderFuture.get()
-                bindPreview(cameraProvider=cameraProvider)
-            },ContextCompat.getMainExecutor(this))
-            val  localModel = LocalModel.Builder()
-                .setAbsoluteFilePath("objectdetect.tflite").build()
+        val localModel = LocalModel.Builder()
+            .setAbsoluteFilePath("objectdetect.tflite").build()
+        cameraProviderFuture = ProcessCameraProvider.getInstance(this)
+        cameraProviderFuture.addListener({
+            val cameraProvider = cameraProviderFuture.get()
+            bindPreview(cameraProvider) },ContextCompat.getMainExecutor(this))
 
             val customObjectDetectorOptions =
                 CustomObjectDetectorOptions.Builder(localModel)
@@ -67,7 +60,12 @@ class photoActivity:  AppCompatActivity() {
                     .setMaxPerObjectLabelCount(3)
                     .build()
 
-            objectDetector= ObjectDetection.getClient(customObjectDetectorOptions)
+            objectDetector = ObjectDetection.getClient(customObjectDetectorOptions)
+
+        /*  if (allPermissionsGranted()) {
+            }
+            },ContextCompat.getMainExecutor(this))
+
 
 
         } else {
@@ -75,6 +73,7 @@ class photoActivity:  AppCompatActivity() {
                 this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)}
         cameraExecutor = Executors.newSingleThreadExecutor()
 
+*/
 
     }
     @SuppressLint("UnsafeOptInUsageError")
@@ -112,7 +111,7 @@ Log.v("photoActivity","Error _ ${it.message}")
         }
         cameraProvider.bindToLifecycle(this as LifecycleOwner,cameraSelector,imageAnalysis,preview)
     }
-    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
+ /*   private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(
             baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
@@ -129,6 +128,6 @@ Log.v("photoActivity","Error _ ${it.message}")
                     add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 }
             }.toTypedArray()
-    }
+    }*/
 }
 
