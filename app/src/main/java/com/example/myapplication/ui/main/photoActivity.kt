@@ -45,8 +45,8 @@ class photoActivity:  AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_photo)
         // Request camera permissions
-        val localModel = LocalModel.Builder()
-            .setAbsoluteFilePath("objectdetect.tflite").build()
+        val localModel = LocalModel.Builder().setAssetFilePath("object.tflite").build()
+
         cameraProviderFuture = ProcessCameraProvider.getInstance(this)
         cameraProviderFuture.addListener({
             val cameraProvider = cameraProviderFuture.get()
@@ -90,18 +90,21 @@ class photoActivity:  AppCompatActivity() {
             .build()
         imageAnalysis.setAnalyzer(ContextCompat.getMainExecutor(this)) { imageProxy ->
             val rotationDegrees = imageProxy.imageInfo.rotationDegrees
-            val mediaImage = imageProxy.image
-            if (mediaImage != null) {
-                val image = InputImage.fromMediaImage(mediaImage, imageProxy.imageInfo.rotationDegrees)
-                objectDetector.process(image).addOnSuccessListener {
+            val image = imageProxy.image
+            if (image != null) {
+                val processImage = InputImage.fromMediaImage(image, rotationDegrees)
+                objectDetector
+                    .process(processImage)
+                    .addOnSuccessListener {
                     objects -> for (i in objects) {
-                        //if(binding.parentLayout.childCount>1)binding.parentLayout.removeViewAt(1)
+                        if(binding.parentLayout.childCount>1)binding.parentLayout.removeViewAt(1)
 val element = Draw(context = this,
     rect = i.boundingBox,
     text = i.labels.firstOrNull()?.text ?:"undefined")
 binding.parentLayout.addView(element)
 
                     }
+                        imageProxy.close()
                 }.addOnFailureListener {
 Log.v("photoActivity","Error _ ${it.message}")
                     imageProxy.close()

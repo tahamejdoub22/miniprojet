@@ -12,8 +12,10 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var binding :ActivityInformationBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityInformationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.miHome -> replaceFragment(HomeFragment())

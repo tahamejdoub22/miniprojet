@@ -3,7 +3,6 @@ package com.example.myapplication.ui.main
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.myapplication.databinding.ActivityLoginBinding
@@ -18,35 +17,22 @@ class loginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        emailFocusListener()
         passwordFocusListener()
         binding.loginButton.setOnClickListener {
 
-            var email = binding.loginInput.text.toString()
+            var email = binding.usernameInput.text.toString()
             var password = binding.passwordInput.text.toString()
             loginAction(email,password)
         }
 
 
     }
-    private fun emailFocusListener(){
-binding.loginInput.setOnFocusChangeListener { v, focused ->
-    if(!focused)
-    {
-        binding.textEmailLayout.helperText = validEmail()
-    }
-}
 
 
-}
-    private fun validEmail():String?{
-        val emailText =binding.loginInput.text.toString()
-        if(!Patterns.EMAIL_ADDRESS.matcher(emailText).matches())
-        {
-            return "Invalid Email Address"
-        }
-        return null
-    }
+
+
+
+
     private fun passwordFocusListener(){
         binding.passwordInput.setOnFocusChangeListener { v, focused ->
             if(!focused)

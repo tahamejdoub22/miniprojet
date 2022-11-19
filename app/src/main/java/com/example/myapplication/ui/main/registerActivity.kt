@@ -24,10 +24,11 @@ class registerActivity : AppCompatActivity() {
         passwordFocusListener()
         confirmpasswordFocusListener()
         binding.loginButton.setOnClickListener {
+            var username = binding.usernameInput.text.toString()
 
             var email = binding.loginInput.text.toString()
             var password = binding.passwordInput.text.toString()
-            registerAction(email,password)
+            registerAction(email,password,username)
         }
     }
     private fun emailFocusListener(){
@@ -94,12 +95,12 @@ class registerActivity : AppCompatActivity() {
             return "password not the same"
         }
         return null}
-    fun registerAction(email: String, password: String){
+    fun registerAction(email: String, password: String, username: String){
         var retrofit = RetrofitClient.getInstance()
         var apiInterface = retrofit.create(APIClient::class.java)
         lifecycleScope.launchWhenCreated {
             try {
-                val user = UserSignUpRequest(email,password,role="entreprise")
+                val user = UserSignUpRequest(email =  email, username =  username , password =  password, role= listOf("entreprise"))
                 val response = apiInterface.singUp(user)
 
                 if(response.isSuccessful()){

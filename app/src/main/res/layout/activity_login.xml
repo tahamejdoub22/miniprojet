@@ -47,9 +47,8 @@
             app:layout_constraintTop_toBottomOf="@+id/imagelogo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textEmailLayout"
+        android:id="@+id/textUsernameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -57,7 +56,7 @@
         app:helperText="@string/required"
         app:helperTextTextColor="@color/red"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:hint="@string/email"
+        android:hint="@string/username12"
         android:textColorHint="@color/gray"
         app:endIconMode="clear_text"
         app:errorEnabled="true"
@@ -66,20 +65,21 @@
         app:layout_constraintStart_toStartOf="@id/tr"
         app:layout_constraintTop_toBottomOf="@+id/tr"
         app:layout_constraintVertical_chainStyle="packed"
-        app:startIconContentDescription="@string/email"
+        app:startIconContentDescription="@string/username12"
 
-        app:startIconDrawable="@drawable/ic_email_48">
+        app:startIconDrawable="@drawable/ic_baseline_person_24">
 
         <com.google.android.material.textfield.TextInputEditText
 
-            android:id="@+id/loginInput"
+            android:id="@+id/usernameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/interregular"
             android:inputType="textEmailAddress"
-             />
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textPasswordInput"
         android:layout_width="match_parent"
@@ -92,7 +92,7 @@ app:helperText="@string/required"
         android:layout_marginEnd="32dp"
         app:startIconContentDescription="@string/password"
         app:endIconMode="password_toggle"
-        app:startIconDrawable="@drawable/ic_interface"
+        app:startIconDrawable="@drawable/ic_baseline_lock_24"
         android:hint="@string/password"
         android:textColorHint="@color/gray"
         app:errorEnabled="true"
@@ -101,7 +101,7 @@ app:counterEnabled="true"
         app:counterMaxLength="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEmailLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textUsernameLayout"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         >
 

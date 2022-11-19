@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
 
 class cameraActivity : AppCompatActivity() {
-private var our_request_code : Int =123 //can number can be given
+    private var our_request_code: Int = 123 //can number can be given
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
@@ -19,10 +19,15 @@ private var our_request_code : Int =123 //can number can be given
 
         val btn_click_me1 = findViewById(R.id.Button) as Button
         btn_click_me1.setOnClickListener {
-          TakePhoto(image_view)
+            TakePhoto(image_view)
         }
     }
+
+
+
+
     fun TakePhoto(view:View){
+
 
         //start an intent to capture image
 val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -41,8 +46,10 @@ val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             val imageview:ImageView=findViewById(R.id.image)
             //start bitmap
             val bitmap =data?.extras?.get("data") as Bitmap
+
             //set image bitmap
             imageview.setImageBitmap(bitmap)
         }
     }
+
 }

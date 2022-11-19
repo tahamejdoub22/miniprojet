@@ -8,7 +8,7 @@ import android.graphics.Rect
 import android.view.View
 
 class Draw(context: Context?,var rect: Rect,var text:String ): View(context) {
- lateinit var boundaryPaint: Paint
+  lateinit var boundaryPaint: Paint
  lateinit var textPaint: Paint
  init {
      init()
@@ -16,12 +16,12 @@ class Draw(context: Context?,var rect: Rect,var text:String ): View(context) {
     private fun init(){
         boundaryPaint= Paint()
         boundaryPaint.color= Color.BLACK
-boundaryPaint.strokeWidth=10f
+boundaryPaint.strokeWidth=50f
         boundaryPaint.style=Paint.Style.STROKE
         textPaint=Paint()
         textPaint.color=Color.BLACK
-        textPaint.strokeWidth=50f
-        textPaint.style=Paint.Style.STROKE
+        textPaint.strokeWidth=100f
+        textPaint.style=Paint.Style.FILL
 
     }
 

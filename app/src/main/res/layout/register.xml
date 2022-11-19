@@ -59,12 +59,43 @@
         android:lineSpacingExtra="1dp"
         android:singleLine="true"
         android:text="@string/create_account"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tr"
-        app:layout_constraintBottom_toTopOf="@id/textEmailLayout"/>
+        app:layout_constraintBottom_toTopOf="@id/textUsernameLayout"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textUsernameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="100dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:helperText="@string/required"
+        app:helperTextTextColor="@color/red"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/username12"
+        android:textColorHint="@color/gray"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        android:background="@drawable/rectangle_bg_white_1"
+        app:layout_constraintBottom_toTopOf="@+id/textEmailLayout"
+        app:layout_constraintEnd_toEndOf="@id/tr"
+        app:layout_constraintStart_toStartOf="@id/tr"
+        app:layout_constraintTop_toBottomOf="@+id/tr"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:startIconContentDescription="@string/username12"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/usernameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/interregular" />
+    </com.google.android.material.textfield.TextInputLayout>
   <com.google.android.material.textfield.TextInputLayout
        android:id="@+id/textEmailLayout"
         android:layout_width="match_parent"
@@ -77,12 +108,13 @@
         android:hint="@string/email"
       android:textColorHint="@color/gray"
       app:endIconMode="clear_text"
+      android:layout_marginTop="16dp"
       app:errorEnabled="true"
       android:background="@drawable/rectangle_bg_white_1"
         app:layout_constraintBottom_toTopOf="@+id/textPasswordInput"
         app:layout_constraintEnd_toEndOf="@id/tr"
         app:layout_constraintStart_toStartOf="@id/tr"
-        app:layout_constraintTop_toBottomOf="@+id/txtCreateyourAcc"
+        app:layout_constraintTop_toBottomOf="@+id/textUsernameLayout"
       app:layout_constraintVertical_chainStyle="packed"
         app:startIconContentDescription="@string/email"
 

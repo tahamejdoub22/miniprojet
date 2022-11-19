@@ -1,11 +1,20 @@
 package com.example.myapplication.ui.main
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.SnapHelper
 import com.example.myapplication.R
+import com.example.myapplication.ui.main.Adapter.MaterialAdapter
+import com.example.myapplication.ui.main.Adapter.entrepriseAdapter
+import com.example.myapplication.ui.main.data.model.Materials
+import com.example.myapplication.ui.main.data.model.entreprise
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,43 +27,64 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var materialList: ArrayList<Materials>
+    private lateinit var materialAdapter: MaterialAdapter
+    private lateinit var recyclerView1: RecyclerView
+    private lateinit var entrepriseList: ArrayList<entreprise>
+    private lateinit var entrepriseAdapter: entrepriseAdapter
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
+    // Inflate the layout for this fragment
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
+    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(itemView, savedInstanceState)
+        super.onCreate(savedInstanceState)
+
+        val recyclerView = requireView().findViewById<RecyclerView>(R.id.RecyclerView)
+        val recyclerView1 = requireView().findViewById<RecyclerView>(R.id.recycler_view)
+
+        recyclerView.setHasFixedSize(true)
+        recyclerView1.setHasFixedSize(true)
+
+        recyclerView.layoutManager =
+            LinearLayoutManager(this.context, RecyclerView.HORIZONTAL, false)
+        val snapHelper: SnapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(recyclerView)
+        recyclerView1.layoutManager =
+            LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
+        snapHelper.attachToRecyclerView(recyclerView1)
+        materialList = ArrayList()
+        entrepriseList = ArrayList()
+
+        entrepriseList.add(entreprise(R.drawable.img_spacing, address = "ariana", distance = 20, time = "15min"))
+        entrepriseList.add(entreprise(R.drawable.img_computer, address = "MOHAMED", distance = 20, time = "30min"))
+        entrepriseList.add(entreprise(R.drawable.img_spacing, address = "KK", distance = 20, time = "50min"))
+        entrepriseAdapter = entrepriseAdapter (entrepriseList)
+        recyclerView1.adapter = entrepriseAdapter
+        materialList.add(Materials(R.drawable.img_untitleddesign_102x72, materialName = "Metal"))
+        materialList.add(Materials(R.drawable.img_untitleddesign_108x69, materialName = "Paper"))
+        materialList.add(Materials(R.drawable.img_untitleddesign_145x89, materialName = "Plastic"))
+        materialList.add(
+            Materials(
+                R.drawable.img_untitleddesign_108x76,
+                materialName = "Glass"
+            )
+        )
+        materialAdapter = MaterialAdapter (materialList)
+        recyclerView.adapter = materialAdapter
+
     }
+
+
 }

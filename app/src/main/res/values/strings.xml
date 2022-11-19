@@ -28,4 +28,8 @@
     <string name="image_captured">image captured</string>
     <string name="Takephoto">TakePhoto</string>
     <string name="start_capture">start_capture</string>
+    <string name="product_designer_at_abcd">Product designer at ABCD</string>
+    <string name="nastya_samantha">Nastya Samantha</string>
+    <string name="spacing_available">spacing available</string>
+    <string name="username12">username</string>
 </resources>
