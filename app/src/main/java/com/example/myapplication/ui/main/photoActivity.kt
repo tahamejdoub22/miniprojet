@@ -1,7 +1,9 @@
 package com.example.myapplication.ui.main
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.util.Size
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +23,7 @@ import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.objects.ObjectDetection
 import com.google.mlkit.vision.objects.ObjectDetector
 import com.google.mlkit.vision.objects.custom.CustomObjectDetectorOptions
+import java.util.*
 import java.util.concurrent.ExecutorService
 
 
@@ -35,16 +38,18 @@ class photoActivity:  AppCompatActivity() {
     private var imageCapture: ImageCapture? = null
     private lateinit var cameraExecutor: ExecutorService
 
-    private var recording: Recording? = null
     private lateinit var binding: ActivityPhotoBinding
     private lateinit var objectDetector:ObjectDetector
     private lateinit var cameraProviderFuture:ListenableFuture<ProcessCameraProvider>
+
+    private var recording: Recording? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_photo)
         // Request camera permissions
+        binding.imageCaptureButton.setOnClickListener { takePhoto() }
         val localModel = LocalModel.Builder().setAssetFilePath("object.tflite").build()
 
         cameraProviderFuture = ProcessCameraProvider.getInstance(this)
@@ -84,7 +89,7 @@ class photoActivity:  AppCompatActivity() {
             .build()
         preview.setSurfaceProvider(binding.previewView.surfaceProvider)
         val imageAnalysis = ImageAnalysis.Builder()
-            .setTargetResolution(Size(1280,720)
+            .setTargetResolution(Size(800,800)
                 )
             .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
             .build()
@@ -97,10 +102,22 @@ class photoActivity:  AppCompatActivity() {
                     .process(processImage)
                     .addOnSuccessListener {
                     objects -> for (i in objects) {
-                        if(binding.parentLayout.childCount>1)binding.parentLayout.removeViewAt(1)
+                        if(binding.parentLayout.childCount>1)
+
+                            binding.parentLayout.removeViewAt(2)
+
+var tt = "";
+if (i.labels.firstOrNull()?.text == "Water bottle" || i.labels.firstOrNull()?.text == "Bottle" || i.labels.firstOrNull()?.text == "Container"){
+     tt = i.labels.firstOrNull()!!.text
+}else {   tt = "scan another"}
 val element = Draw(context = this,
     rect = i.boundingBox,
-    text = i.labels.firstOrNull()?.text ?:"undefined")
+    text = tt
+)
+
+
+i.labels.size.rem(40f)
+
 binding.parentLayout.addView(element)
 
                     }
@@ -114,6 +131,18 @@ Log.v("photoActivity","Error _ ${it.message}")
         }
         cameraProvider.bindToLifecycle(this as LifecycleOwner,cameraSelector,imageAnalysis,preview)
     }
+    private var our_request_code: Int = 123 //can number can be given
+    private fun takePhoto() {
+        // Get a stable reference of the modifiable image capture use case
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+        //start the result
+        //check if the task can be performed
+        if(intent.resolveActivity(packageManager)!=null){
+            startActivityForResult(intent,our_request_code)
+        // Create time stamped name and MediaStore entry.
+
+        }
  /*   private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(
             baseContext, it) == PackageManager.PERMISSION_GRANTED
@@ -132,5 +161,6 @@ Log.v("photoActivity","Error _ ${it.message}")
                 }
             }.toTypedArray()
     }*/
+}
 }
 

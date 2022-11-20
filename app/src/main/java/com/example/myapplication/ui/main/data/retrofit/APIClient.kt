@@ -28,7 +28,7 @@ interface APIClient {
         operator fun invoke(): APIClient {
             return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://192.168.1.12:3000")
+                .baseUrl("http://192.168.176.97:3000")
                 .build()
                 .create(APIClient::class.java)
 

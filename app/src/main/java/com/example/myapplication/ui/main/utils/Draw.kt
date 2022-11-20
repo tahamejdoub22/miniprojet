@@ -21,6 +21,9 @@ boundaryPaint.strokeWidth=50f
         textPaint=Paint()
         textPaint.color=Color.BLACK
         textPaint.strokeWidth=100f
+        val spSize = 20
+        val scaledSizeInPixels = spSize * resources.displayMetrics.scaledDensity
+        textPaint.textSize=scaledSizeInPixels
         textPaint.style=Paint.Style.FILL
 
     }
