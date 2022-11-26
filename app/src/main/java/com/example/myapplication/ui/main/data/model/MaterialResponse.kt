@@ -4,5 +4,7 @@ data class MaterialResponse(
     val id:Int ,
     val name:String,
     val description:String,
-    val photo:String
+    val photo:String,
+    var type: List<String>
+
 )

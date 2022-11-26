@@ -82,9 +82,7 @@ class loginActivity : AppCompatActivity() {
             } catch (ex: Exception) {
                 Log.d("LoggingActivity", "error")
 
-            }
-
-        }
+            }}
     }
 
 }

@@ -14,7 +14,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/txtNearbybinstat"
@@ -35,7 +35,7 @@
             <LinearLayout
                 android:id="@+id/linearColumnuntitleddesign"
                 style="@style/groupStylegreen_1"
-                android:layout_width="384dp"
+                android:layout_width="350dp"
                 android:layout_height="159dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toTopOf="@+id/linearRowmatrials"
@@ -202,24 +202,23 @@
 
                     <TextView
                         android:id="@+id/txtH6RegularDeskOne"
-                        android:layout_width="0dp"
+                        android:layout_width="18dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="86dp"
+                        android:layout_marginStart="65dp"
                         android:layout_marginTop="1dp"
                         android:layout_weight="0.39"
                         android:ellipsize="end"
-                        android:fontFamily="@font/interbold"
+                        android:fontFamily="@font/interregular"
                         android:lineSpacingExtra="1dp"
                         android:singleLine="true"
                         android:text="@string/lbl_saved_co2"
-                        android:textSize="10sp"
-                         />
+                        android:textSize="10sp" />
 
                     <TextView
                         android:id="@+id/txtH6RegularDeskTwo"
                         android:layout_width="101dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="73dp"
+                        android:layout_marginStart="0dp"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="0.36"
                         android:ellipsize="end"
@@ -227,7 +226,7 @@
                         android:lineSpacingExtra="1dp"
                         android:singleLine="true"
                         android:text="@string/lbl_recycled"
-                        android:textSize="10sp" />
+                        android:textSize="8sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -263,8 +262,10 @@
                     android:id="@+id/linearRowellipseone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:orientation="horizontal"
-                    tools:ignore="MissingConstraints">
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="8dp">
 
                     <ImageView
                         android:id="@+id/imageEllipseOne"
@@ -339,16 +340,19 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/RecyclerView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="300dp"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
                 android:layout_marginBottom="256dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toTopOf="@+id/recycler_view"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="10"
+                tools:orientation="horizontal"
+                android:scrollbars="horizontal"
+                tools:listitem="@layout/each_item"
+                 />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"

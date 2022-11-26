@@ -1,14 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.LearnFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/learnfragment" />
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtTopicforyou"
+                style="@style/txtInterbold20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="1dp"
+                android:singleLine="true"
+                android:text="Topic For you"
+                app:layout_constraintBottom_toTopOf="@+id/recycler_view_LearnVertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/RecyclerViewLearnHorizontal"
+                app:layout_constraintVertical_bias="0.48" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RecyclerViewLearnHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="256dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/recycler_view_LearnVertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_LearnVertical"
+                android:layout_width="324dp"
+                android:layout_height="434dp"
+                android:layout_marginTop="76dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/RecyclerViewLearnHorizontal" />
+
+            <TextView
+                android:id="@+id/txtGoodtoknow"
+                style="@style/txtInterbold20"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.55"
+                android:ellipsize="end"
+                android:lineSpacingExtra="1dp"
+                android:singleLine="true"
+                android:text="Good to know"
+                app:layout_constraintBottom_toTopOf="@+id/RecyclerViewLearnHorizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarToolbar"
+        android:layout_width="456dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="start"
+        app:contentInsetStart="0dp">
+
+        <LinearLayout
+            android:id="@+id/linearRowarrowleft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageArrowleft1"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_arrowleft_black_900"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/img_arrowleft_black_900" />
+
+            <TextView
+                android:id="@+id/txtLearn"
+                style="@style/txtInterbold20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="129dp"
+                android:layout_weight="0.91"
+                android:ellipsize="end"
+                android:lineSpacingExtra="1dp"
+                android:singleLine="true"
+                android:text="@{learnVM.learnModel.txtLearn}"
+                tools:text="@string/learn" />
+
+
+        </LinearLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
 
 </FrameLayout>

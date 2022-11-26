@@ -40,7 +40,18 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtPrice"
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="1dp"
+                android:singleLine="true"
+                android:text="@{listspacingRowModel.txtPrice}"
+                tools:text="150m" />
+
+            <TextView
+                android:id="@+id/distance"
                 android:layout_width="54dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -51,8 +62,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 tools:text="150m" />
 
             <TextView
-                android:id="@+id/txtH5BoldDesktop"
-                android:layout_width="132dp"
+                android:id="@+id/address"
+                android:layout_width="187dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="27dp"
                 android:ellipsize="end"
@@ -61,7 +72,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:text="@string/spacing_available" />
 
             <TextView
-                android:id="@+id/txtH6MediumDeskt"
+                android:id="@+id/time"
                 android:layout_width="187dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"

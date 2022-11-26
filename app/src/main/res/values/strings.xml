@@ -28,13 +28,8 @@
     <string name="profile">Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="homefragment">HomeFragment</string>
-    <string name="learnfragment">learnFragment</string>
     <string name="mapfragment">mapFragment</string>
     <string name="takephoto">TakePhoto</string>
-    <string name="image_captured">image captured</string>
-    <string name="Takephoto">TakePhoto</string>
-    <string name="start_capture">start_capture</string>
     <string name="product_designer_at_abcd">Product designer at ABCD</string>
     <string name="nastya_samantha">Nastya Samantha</string>
     <string name="spacing_available">spacing available</string>

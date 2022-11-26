@@ -15,7 +15,7 @@ class DashboardActivity : AppCompatActivity() {
 
         binding = ActivityInformationBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+setCurrentFragment(HomeFragment())
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.miHome -> replaceFragment(HomeFragment())
@@ -38,7 +38,11 @@ class DashboardActivity : AppCompatActivity() {
 
 
     }
-
+    private fun setCurrentFragment(fragment: Fragment)=
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.FrameLayout,fragment)
+            commit()
+        }
 
 private fun replaceFragment(fragment:Fragment){
     val fragmentManager = supportFragmentManager

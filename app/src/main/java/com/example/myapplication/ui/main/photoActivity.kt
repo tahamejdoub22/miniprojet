@@ -2,10 +2,11 @@ package com.example.myapplication.ui.main
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
 import android.util.Log
 import android.util.Size
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -49,13 +50,13 @@ class photoActivity:  AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_photo)
         // Request camera permissions
-        binding.imageCaptureButton.setOnClickListener { takePhoto() }
         val localModel = LocalModel.Builder().setAssetFilePath("object.tflite").build()
 
         cameraProviderFuture = ProcessCameraProvider.getInstance(this)
         cameraProviderFuture.addListener({
             val cameraProvider = cameraProviderFuture.get()
             bindPreview(cameraProvider) },ContextCompat.getMainExecutor(this))
+
 
             val customObjectDetectorOptions =
                 CustomObjectDetectorOptions.Builder(localModel)
@@ -96,6 +97,7 @@ class photoActivity:  AppCompatActivity() {
         imageAnalysis.setAnalyzer(ContextCompat.getMainExecutor(this)) { imageProxy ->
             val rotationDegrees = imageProxy.imageInfo.rotationDegrees
             val image = imageProxy.image
+
             if (image != null) {
                 val processImage = InputImage.fromMediaImage(image, rotationDegrees)
                 objectDetector
@@ -113,6 +115,7 @@ if (i.labels.firstOrNull()?.text == "Water bottle" || i.labels.firstOrNull()?.te
 val element = Draw(context = this,
     rect = i.boundingBox,
     text = tt
+
 )
 
 
@@ -122,45 +125,55 @@ binding.parentLayout.addView(element)
 
                     }
                         imageProxy.close()
-                }.addOnFailureListener {
-Log.v("photoActivity","Error _ ${it.message}")
-                    imageProxy.close()
-                }
+                    }.addOnFailureListener {
+                        Log.v("photoActivity", "Error _ ${it.message}")
+                        imageProxy.close()
+                    }
 
             }
         }
-        cameraProvider.bindToLifecycle(this as LifecycleOwner,cameraSelector,imageAnalysis,preview)
+        binding.imageCaptureButton.setOnClickListener { takePhoto()}
+        val imageCapture = ImageCapture.Builder()
+            .setTargetRotation(binding.parentLayout.display.rotation)
+            .build()
+        cameraProvider.bindToLifecycle(
+            this as LifecycleOwner,
+            cameraSelector,
+            imageAnalysis,
+            preview
+        )
+
+
+        /*   private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
+               ContextCompat.checkSelfPermission(
+                   baseContext, it) == PackageManager.PERMISSION_GRANTED
+           }
+           companion object {
+               private const val TAG = "CameraXApp"
+               private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
+               private const val REQUEST_CODE_PERMISSIONS = 10
+               private val REQUIRED_PERMISSIONS =
+                   mutableListOf (
+                       Manifest.permission.CAMERA,
+                       Manifest.permission.RECORD_AUDIO
+                   ).apply {
+                       if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
+                           add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                       }
+                   }.toTypedArray()
+           }*/
     }
+
     private var our_request_code: Int = 123 //can number can be given
+
+    @RequiresApi(Build.VERSION_CODES.Q)
     private fun takePhoto() {
-        // Get a stable reference of the modifiable image capture use case
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
 
-        //start the result
-        //check if the task can be performed
-        if(intent.resolveActivity(packageManager)!=null){
-            startActivityForResult(intent,our_request_code)
-        // Create time stamped name and MediaStore entry.
+}}
 
-        }
- /*   private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
-        ContextCompat.checkSelfPermission(
-            baseContext, it) == PackageManager.PERMISSION_GRANTED
-    }
-    companion object {
-        private const val TAG = "CameraXApp"
-        private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
-        private const val REQUEST_CODE_PERMISSIONS = 10
-        private val REQUIRED_PERMISSIONS =
-            mutableListOf (
-                Manifest.permission.CAMERA,
-                Manifest.permission.RECORD_AUDIO
-            ).apply {
-                if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
-                    add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                }
-            }.toTypedArray()
-    }*/
-}
-}
+
+
+
+
+
 
