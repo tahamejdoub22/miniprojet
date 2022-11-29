@@ -43,6 +43,7 @@ app.get('/forgot-password',(req,res,next)=>{
     res.send(200);
 
 });
+/*
 app.post('/forgot-password',(req,res,next)=>{
     const {username} = req.body
    //make sure user exists in data base
@@ -99,7 +100,7 @@ app.post('/reset-password/:id/:token',(req,res,next)=>{
         console.log(error.message)
         res.send(error.message)
     }
-});
+});*/
 const PORT = process.env.PORT ||3000
 app.listen(PORT,()=>{
     console.log(`Server running on port ${PORT}`)

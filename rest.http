@@ -13,7 +13,8 @@ POST http://localhost:3000/auth/register
 content-type: application/json
 
 {
-"email": "sidki1@gmail.com",
+"username":"lllllllssss",
+"email": "mm@gmail.com",
 "password":"1234",
 "role":"entreprise"
 }
@@ -22,7 +23,7 @@ POST http://localhost:3000/auth/forgot-password
 content-type: application/json
 
 {
-"email": "sidki1@gmail.com"
+"email": "tahamejdoub238@gmail.com"
 }
 
 ###Refresh token Route

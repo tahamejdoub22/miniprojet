@@ -325,7 +325,7 @@ router.post('/login',async(req,res,next)=>{
 
 
 })
-router.post('/forgot-password',async (req,res,next)=>{
+/*router.post('/forgot-password',async (req,res,next)=>{
     const {username} = req.body
     const user = await User.findOne({username : username})
 
@@ -390,7 +390,7 @@ router.post('/Refresh-token',async(req,res,next)=>{
 })
 router.delete('/logout',async(req,res,next)=>{
     res.send("logout route")
-})
+})*/
 
 
 
