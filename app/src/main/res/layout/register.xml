@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tr"
+        android:layout_width="582dp"
+        android:layout_height="278dp"
+        android:background="@drawable/rectangle_gradient_s_green_400_e_green_800_radius_22"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imagelogo"
+            android:layout_width="301dp"
+            android:layout_height="220dp"
+            android:src="@drawable/img_getplenty"
+            app:layout_constraintBottom_toTopOf="@+id/texrlogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/texrlogo"
+            android:layout_width="270dp"
+            android:layout_height="53dp"
+            android:fontFamily="@font/interbold"
+            android:text="@string/search_recycle"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/imagelogo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txtCreateyourAcc"
+        android:layout_width="178dp"
+        android:layout_height="31dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="200dp"
+        android:ellipsize="end"
+        android:fontFamily="@style/txtInterbold20"
+        android:lineSpacingExtra="1dp"
+        android:singleLine="true"
+        android:text="@string/create_account"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tr"
+        app:layout_constraintBottom_toTopOf="@id/textUsernameLayout"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textUsernameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="100dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:helperText="@string/required"
+        app:helperTextTextColor="@color/red"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/username12"
+        android:textColorHint="@color/gray"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        android:background="@drawable/rectangle_bg_white_1"
+        app:layout_constraintBottom_toTopOf="@+id/textEmailLayout"
+        app:layout_constraintEnd_toEndOf="@id/tr"
+        app:layout_constraintStart_toStartOf="@id/tr"
+        app:layout_constraintTop_toBottomOf="@+id/tr"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:startIconContentDescription="@string/username12"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/usernameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/interregular" />
+    </com.google.android.material.textfield.TextInputLayout>
+  <com.google.android.material.textfield.TextInputLayout
+       android:id="@+id/textEmailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+      app:helperText="@string/required"
+      app:helperTextTextColor="@color/red"
+      android:layout_marginEnd="32dp"
+        android:hint="@string/email"
+      android:textColorHint="@color/gray"
+      app:endIconMode="clear_text"
+      android:layout_marginTop="16dp"
+      app:errorEnabled="true"
+      android:background="@drawable/rectangle_bg_white_1"
+        app:layout_constraintBottom_toTopOf="@+id/textPasswordInput"
+        app:layout_constraintEnd_toEndOf="@id/tr"
+        app:layout_constraintStart_toStartOf="@id/tr"
+        app:layout_constraintTop_toBottomOf="@+id/textUsernameLayout"
+      app:layout_constraintVertical_chainStyle="packed"
+        app:startIconContentDescription="@string/email"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/loginInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/interregular" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textPasswordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:helperText="@string/required"
+        app:helperTextTextColor="@color/red"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:startIconContentDescription="@string/password"
+        app:endIconMode="password_toggle"
+        android:hint="@string/password"
+        android:textColorHint="@color/gray"
+        android:background="@drawable/rectangle_bg_white_1"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textEmailLayout"
+        app:layout_constraintBottom_toTopOf="@+id/confirmPasswordTextInputLayout"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:fontFamily="@font/interregular"
+            android:maxLength="10"
+            android:lines="1"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmPasswordTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/confirm_password"
+        app:helperText="@string/required"
+        app:helperTextTextColor="@color/red"
+        app:endIconMode="password_toggle"
+        android:textColorHint="@color/gray"
+        app:counterMaxLength="10"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:background="@drawable/rectangle_bg_white_1"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:errorEnabled="true"
+            app:layout_constraintTop_toBottomOf="@+id/textPasswordInput"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
+        app:layout_constraintStart_toStartOf="@+id/textPasswordInput"
+        app:layout_constraintEnd_toEndOf="@+id/textPasswordInput" >
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/confirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        app:passwordToggleEnabled="true"
+        android:maxLength="10"
+        android:lines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginButton"
+        style="@style/btnSolidRoundedOutline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lineSpacingExtra="1dp"
+        android:paddingStart="30dp"
+        android:paddingTop="13dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="13dp"
+        android:singleLine="true"
+
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordTextInputLayout"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/register"
+        app:layout_constraintBottom_toTopOf="@+id/tr1"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tr1"
+        android:layout_width="376dp"
+        android:layout_height="135dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton">
+
+        <View
+            android:id="@+id/lineLineThree"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/imageIcons8googleFour"
+            app:layout_constraintEnd_toStartOf="@id/txtOrsigninwith"
+            app:layout_constraintStart_toStartOf="@+id/tr1"
+            android:layout_weight="0.2  "
+            />
+
+        <TextView
+            android:id="@+id/txtOrsigninwith"
+            android:layout_width="95dp"
+            android:layout_height="29dp"
+            android:layout_weight="0.31"
+            android:ellipsize="end"
+            android:fontFamily="@font/interregular"
+            android:lineSpacingExtra="1dp"
+            android:singleLine="true"
+            android:text="@string/or_signin_with"
+            app:layout_constraintBottom_toTopOf="@id/imageIcons8applelo"
+            app:layout_constraintEnd_toStartOf="@+id/lineLineFour"
+            app:layout_constraintStart_toEndOf="@+id/lineLineThree"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/lineLineFour"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+
+            android:layout_weight="0.39"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toTopOf="@id/imageIcons8facebook"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtOrsigninwith"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+
+            android:id="@+id/imageIcons8googleFour"
+            android:layout_width="35dp"
+            android:layout_height="31dp"
+            android:layout_gravity="top|center"
+
+            android:scaleType="fitXY"
+            android:src="@drawable/img_icons8google4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageIcons8applelo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineLineThree" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+
+            android:id="@+id/imageIcons8facebook"
+            android:layout_width="35dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center"
+
+            android:scaleType="fitXY"
+            android:src="@drawable/img_icons8facebook"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageIcons8applelo"
+            app:layout_constraintTop_toBottomOf="@id/lineLineFour"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+
+            />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+
+            android:id="@+id/imageIcons8applelo"
+            android:layout_width="35dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center"
+
+            android:scaleType="fitXY"
+            android:src="@drawable/img_icons8applelo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageIcons8googleFour"
+            app:layout_constraintEnd_toStartOf="@id/imageIcons8facebook"
+            app:layout_constraintTop_toBottomOf="@+id/lineLineFour"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

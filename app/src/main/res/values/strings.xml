@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name"><![CDATA[SEARCH&RECYCLE]]></string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="email">Email..</string>
+    <string name="search_recycle"><![CDATA[SEARCH&RECYCLE]]></string>
+    <string name="find_your_nearest_recycle_station">Find your nearest recycle station</string>
+    <string name="inscription">inscription</string>
+    <string name="connextion">connextion</string>
+    <string name="lbl_points">POINTS</string>
+    <string name="lbl_saved_co2">SAVED CO2</string>
+    <string name="lbl_recycled">RECYCLED</string>
+    <string name="lbl_3222">3222</string>
+    <string name="lbl_400g">400g</string>
+    <string name="lbl_21">21</string>
+
+    <string name="amet_minim_mollit_non_deserunt_ullamco_est_sit_aliqua_dolor_do_amet_sint_velit_officia_consequat_duis_enim_velit_mollit_exercitation_veniam_consequat_sunt_nostrud_amet">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</string>
+    <string name="start">start</string>
+    <string name="create_account">Create Account</string>
+    <string name="or_signin_with">Or signin with</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="register">Register</string>
+    <string name="required">Required</string>
+    <string name="camera">camera</string>
+    <string name="home">Home</string>
+    <string name="learn">Learn</string>
+    <string name="map">map</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mapfragment">mapFragment</string>
+    <string name="takephoto">TakePhoto</string>
+    <string name="product_designer_at_abcd">Product designer at ABCD</string>
+    <string name="nastya_samantha">Nastya Samantha</string>
+    <string name="spacing_available">spacing available</string>
+    <string name="username12">username</string>
+    <string name="nearby_bin_station">Nearby bin station</string>
+</resources>

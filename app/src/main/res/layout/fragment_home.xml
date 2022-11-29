@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtNearbybinstat"
+                style="@style/txtInterbold20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="1dp"
+                android:singleLine="true"
+                android:text="@string/nearby_bin_station"
+                app:layout_constraintBottom_toTopOf="@+id/recycler_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/RecyclerView"
+                app:layout_constraintVertical_bias="0.48"/>
+
+
+            <LinearLayout
+                android:id="@+id/linearColumnuntitleddesign"
+                style="@style/groupStylegreen_1"
+                android:layout_width="350dp"
+                android:layout_height="159dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/linearRowmatrials"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbarToolbar"
+                app:layout_constraintVertical_bias="0.0">
+
+                <LinearLayout
+                    android:id="@+id/linearRowuntitleddesign"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="start"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:id="@+id/frameStackuntitleddesign"
+                        android:layout_width="122dp"
+                        android:layout_height="94dp"
+                        android:layout_marginBottom="13dp">
+
+                        <ImageView
+                            android:id="@+id/imageUntitleddesign"
+                            android:layout_width="match_parent"
+                            android:layout_height="77dp"
+                            android:layout_gravity="top|start"
+                            android:layout_marginBottom="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_untitleddesign_77x122"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/txtZipcode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="35dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/interbold"
+                            android:lineSpacingExtra="1dp"
+                            android:singleLine="true"
+                            android:text="@string/lbl_3222"
+                             />
+                    </FrameLayout>
+
+                    <View
+                        android:id="@+id/lineLineOne"
+                        android:layout_width="0dp"
+                        android:layout_height="92dp"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="0.0"
+                        android:background="@color/white" />
+
+                    <LinearLayout
+                        android:id="@+id/linearColumnicons8cloudsnine"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="33dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="11dp"
+                        android:layout_weight="0.29"
+                        android:gravity="start"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageIcons8cloudsNine"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginEnd="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_icons8clouds9"
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/img_icons8clouds9" />
+
+                        <TextView
+                            android:id="@+id/txtWeight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="17dp"
+                            android:layout_marginEnd="10dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/interbold"
+                            android:lineSpacingExtra="1dp"
+                            android:singleLine="true"
+                            android:text="@string/lbl_400g"
+                          />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/lineLineTwo"
+                        android:layout_width="0dp"
+                        android:layout_height="92dp"
+                        android:layout_marginStart="33dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="0.0"
+                        android:background="@color/white" />
+
+                    <LinearLayout
+                        android:id="@+id/linearColumnicons8recyclin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="36dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="13dp"
+                        android:layout_weight="0.18"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageIcons8recyclin"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:gravity="start"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_icons8recyclin"
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/img_icons8recyclin" />
+
+                        <TextView
+                            android:id="@+id/txtH6BoldDesktop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginEnd="10dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/interbold"
+                            android:gravity="center_horizontal"
+                            android:lineSpacingExtra="1dp"
+                            android:singleLine="true"
+                            android:text="@string/lbl_21"
+                             />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearRowh6regulardesk"
+                    android:layout_width="450sp"
+                    android:layout_height="29dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginBottom="27dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtH6RegularDesk"
+                        android:layout_width="0dp"
+                        android:textSize="9dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="0.25"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/interregular"
+                        android:lineSpacingExtra="1dp"
+                        android:singleLine="true"
+                        android:text="@string/lbl_points"/>
+
+                    <TextView
+                        android:id="@+id/txtH6RegularDeskOne"
+                        android:layout_width="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="65dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="0.39"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/interregular"
+                        android:lineSpacingExtra="1dp"
+                        android:singleLine="true"
+                        android:text="@string/lbl_saved_co2"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/txtH6RegularDeskTwo"
+                        android:layout_width="101dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="0.36"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/interregular"
+                        android:lineSpacingExtra="1dp"
+                        android:singleLine="true"
+                        android:text="@string/lbl_recycled"
+                        android:textSize="8sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearRowmatrials"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="232dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/RecyclerView"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.Toolbar
+
+                android:id="@+id/toolbarToolbar"
+                android:layout_width="371dp"
+                android:layout_height="76dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                app:contentInsetStart="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintRight_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginLeft="40dp"
+                android:layout_marginBottom="40dp"
+                app:layout_goneMarginRight="40dp">
+
+                <LinearLayout
+                    android:id="@+id/linearRowellipseone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="8dp">
+
+                    <ImageView
+                        android:id="@+id/imageEllipseOne"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:background="@drawable/img_ellipse1"
+                        android:scaleType="centerCrop"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_ellipse1" />
+
+                    <LinearLayout
+                        android:id="@+id/linearColumnnastyasamantha"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="0.7"
+                        android:gravity="start"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtNastyaSamantha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/interbold"
+                            android:lineSpacingExtra="1dp"
+                            android:singleLine="true"
+                            android:text="@string/nastya_samantha" />
+
+                        <TextView
+                            android:id="@+id/txtProductdesigne"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="10dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/interregular"
+                            android:lineSpacingExtra="1dp"
+                            android:singleLine="true"
+                            android:text="@string/product_designer_at_abcd" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageRefresh"
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="19dp"
+                        android:layout_marginBottom="16dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_refresh_18x20"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_refresh_18x20" />
+
+                    <ImageView
+                        android:id="@+id/imageNotification"
+                        android:layout_width="18dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="29dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="16dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_notification"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_notification" />
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="256dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/recycler_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="10"
+                tools:orientation="horizontal"
+                android:scrollbars="horizontal"
+                tools:listitem="@layout/each_item"
+                 />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="324dp"
+                android:layout_height="434dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="72dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/RecyclerView" />
+
+            <TextView
+                android:layout_marginStart="30dp"
+                android:id="@+id/txtMatrials"
+                style="@style/txtInterbold20"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.55"
+                android:ellipsize="end"
+                android:lineSpacingExtra="1dp"
+                android:singleLine="true"
+                app:layout_constraintBottom_toTopOf="@+id/RecyclerView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearColumnuntitleddesign"
+                app:layout_constraintVertical_bias="0.525"
+                android:text="materials" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</FrameLayout>
