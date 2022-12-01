@@ -55,7 +55,8 @@ class ProfileFragment : Fragment() {
         btnNavigateToAccountDetails.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_accountDetailsFragment_to_profileFragment)
         }*/
-        return view;
+        return inflater.inflate(R.layout.fragment_account_details2, container, false)
+
     }
 
     var list: ArrayList<Materials> = arrayListOf()
@@ -71,7 +72,7 @@ class ProfileFragment : Fragment() {
 
         val recyclerView = requireView().findViewById<RecyclerView>(R.id.recycler_view)
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.0.4:3000")
+            .baseUrl("http://192.168.43.211:3000")
             .addConverterFactory(GsonConverterFactory.create()).build()
 
         val api:APIClient=retrofit.create(APIClient::class.java)

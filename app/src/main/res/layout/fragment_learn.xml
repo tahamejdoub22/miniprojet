@@ -109,8 +109,8 @@
                 android:ellipsize="end"
                 android:lineSpacingExtra="1dp"
                 android:singleLine="true"
-                android:text="@{learnVM.learnModel.txtLearn}"
-                tools:text="@string/learn" />
+                android:text="Learn"
+                 />
 
 
         </LinearLayout>
