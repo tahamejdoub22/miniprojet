@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#4CAF50"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:paddingStart="15dp"
+        android:paddingBottom="15dp"
+    tools:ignore="RtlSymmetry">
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginBottom="15dp"
+        android:contentDescription="ScrapShot Icon"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not signed in"
+            android:id="@+id/nameNav"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/pointsNav"
+            android:text="Sign in to save points"
+            android:textColor="#FFFFFF"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>
