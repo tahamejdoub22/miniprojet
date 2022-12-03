@@ -49,7 +49,7 @@ class mapFragment : Fragment(), OnMapReadyCallback {
 
         googleMap.addMarker(
             MarkerOptions()
-                .position(LatLng(36.868233, 10.079075))
+                .position(LatLng(37.348049, 9.744523))
                 .title("tunis")
         )
     }

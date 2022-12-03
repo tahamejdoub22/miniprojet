@@ -66,6 +66,7 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
     implementation 'org.tensorflow:tensorflow-lite-gpu:2.3.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
@@ -105,6 +106,18 @@ dependencies {
     // Dependency to include Maps SDK for Android
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.adevinta.android:leku:9.1.4'
+    implementation 'com.google.maps.android:android-maps-utils:1.1.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    // Dependency to include Maps SDK for Android
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'com.google.maps.android:android-maps-utils:2.2.0'
+
+    testImplementation 'junit:junit:4.13.2'
 
 
 

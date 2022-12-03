@@ -1,8 +1,8 @@
 package com.google.codelabs.buildyourfirstmap.place
 
-import Place
 import android.content.Context
 import com.example.myapplication.R
+import com.example.myapplication.ui.main.place.Place
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

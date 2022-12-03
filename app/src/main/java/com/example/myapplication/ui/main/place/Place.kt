@@ -1,14 +1,17 @@
+package com.example.myapplication.ui.main.place
 import com.google.android.gms.maps.model.LatLng
-
-
+import com.google.maps.android.clustering.ClusterItem
 
 
 data class Place(
     val name: String,
     val latLng: LatLng,
     val address: String,
+    val points: Float,
+    val date: String,
+    val participants: Float,
     val rating: Float
-) : ClusterItem() {
+) : ClusterItem {
     override fun getPosition(): LatLng =
         latLng
 
@@ -19,21 +22,3 @@ data class Place(
         address
 }
 
-abstract class ClusterItem {
-
-    /**
-     * The position of this marker. This must always return the same value.
-     */
-    abstract fun getPosition(): LatLng
-
-    /**
-     * The title of this marker.
-     */
-    abstract fun getTitle(): String
-
-    /**
-     * The description of this marker.
-     */
-    abstract fun getSnippet(): String
-
-}

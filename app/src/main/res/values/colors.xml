@@ -8,6 +8,10 @@
     <color name="color_4">#90DA9F</color>
     <color name="color_5">#B6E7C0</color>
     <color name="gray">#a4afaa</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryTranslucent">#556200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
     <color name="gray_300">#4ce3e3e3</color>
     <color name="gray_901">#111827</color>
     <color name="green_800">#15803d</color>
