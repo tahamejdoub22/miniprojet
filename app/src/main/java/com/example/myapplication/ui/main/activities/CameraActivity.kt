@@ -23,29 +23,26 @@ class CameraActivity : AppCompatActivity() {
         }
     }
 
-
-
-
-    fun TakePhoto(view:View){
+    fun TakePhoto(view: View) {
 
 
         //start an intent to capture image
-val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
 
         //start the result
         //check if the task can be performed
-        if(intent.resolveActivity(packageManager)!=null){
-            startActivityForResult(intent,our_request_code)
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivityForResult(intent, our_request_code)
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == our_request_code && resultCode == RESULT_OK){
+        if (requestCode == our_request_code && resultCode == RESULT_OK) {
             //if the result is ok our request code is equal to request code
-            val imageview:ImageView=findViewById(R.id.image)
+            val imageview: ImageView = findViewById(R.id.image)
             //start bitmap
-            val bitmap =data?.extras?.get("data") as Bitmap
+            val bitmap = data?.extras?.get("data") as Bitmap
 
             //set image bitmap
             imageview.setImageBitmap(bitmap)

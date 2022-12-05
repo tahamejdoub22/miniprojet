@@ -28,11 +28,6 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-
-
-
-
-
     private fun passwordFocusListener(){
         binding.passwordInput.setOnFocusChangeListener { v, focused ->
             if(!focused)
