@@ -10,8 +10,12 @@ const material = mongoose.model(
         type: mongoose.Schema.Types.String,
         ref: "Type_material"
       }
-    ]
+    ],
+    users: 
+    [{ type: mongoose.Types.ObjectId, ref: 'user' }]
   })
+ 
+
 );
 
 module.exports = material;

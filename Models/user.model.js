@@ -2,18 +2,21 @@ const mongoose =require('mongoose')
 const  schema =mongoose.Schema
 const bcrypt = require('bcrypt')
 const UserSchemas = new schema({
-    username: String,
+    FirstName:{type:String},
+    LastName:{type:String},
+    email:{type:String},
+    avatar:{type:String} ,
 
-    
-    role : {
-        type: String,
-        default:"user",
-        enum:["user","admin","entreprise"]
-    },
+    username:{type: String,
+        required:true},
+
     password:{
         type:String,
         required: true  
-    }
+    },
+    materials:     [{ type: mongoose.Types.ObjectId, ref: 'material' }],
+    event:     [{ type: mongoose.Types.ObjectId, ref: 'event' }],
+
 
 })
 

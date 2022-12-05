@@ -107,8 +107,6 @@ router.post('/postentre', async (req, res) => {
         name: req.body.name,
         Photo: req.body.Photo,
         address: req.body.address,
-        distance: req.body.distance,
-        time: req.body.time,
 
 
     })
@@ -293,9 +291,9 @@ router.delete('/delete/:id', async (req, res) => {
 
 router.post('/register',async(req,res,next)=>{
     try{
-const {username,role,password} =req.body
+const {username,password,email,FirstName,LastName,avatar} =req.body
 const result = await authSchema.validateAsync(req.body)
-if(!username||!password) throw createError.BadRequest()
+if(!username||!password||!email||!FirstName||!LastName||!avatar) throw createError.BadRequest()
 const doesExist = await User.findOne({username:result.username})
 if (doesExist) throw createError.Conflict(`${result.username}is already been registered`)
 const user = new User(result)
@@ -316,7 +314,7 @@ router.post('/login',async(req,res,next)=>{
         if (!isMatch) throw createError.Unauthorized("Username or password is not valid")
         const accessToken = await signAcessToken(user.id)
         //res.send({accessToken})
-        res.send({"role:":user.role,"accessToken":accessToken,"username": user.username})
+        res.send({"acessToken":accessToken,"username": user.username,"email":user.email,"firstname":user.FirstName,"last name":user.LastName,"photo":user.avatar})
 
     } catch (error) {
         if(error.isJoi === true) return next(createError.BadRequest("Invalid Username or Password"))
@@ -325,72 +323,7 @@ router.post('/login',async(req,res,next)=>{
 
 
 })
-/*router.post('/forgot-password',async (req,res,next)=>{
-    const {username} = req.body
-    const user = await User.findOne({username : username})
 
-   //make sure user exists in data base
-   if(!user){
-    res.send('User not registered');
-    return;
-   }
-   //user exists and now we create a one time like for 24 hours
-   const secret = JWT_SECRET + User.password
-   const payload = {
-    username: User.username,
-    id: User.id
-   }
-   const token = jwt.sign(payload,secret,{expiresIn: '24 h'})
-   const link = "http://localhost:3000/auth/reset-password/"+user.id+"/"+token
-   console.log(link)
-   res.send('Password reset link has been sent to your email')
-
-});
-router.get('/reset-password/:id/:token',async (req,res,next)=>{
-    const {id,token} =req.params
-    const user = await User.findById(id)
-    // check if this id exsits in database
-    if (id!==user.id) {
-        res.send('invalid id')
-        return
-    }
-    // we have a valid user with this id 
-    const secret = JWT_SECRET + user.password
-    try {
-        const payload = jwt.verify(token, secret)
-        res.render('reset-password',{email: user.email})
-    } catch (error) {
-        console.log(error.message)
-        res.send(error.message)
-    }
-});
-router.post('/reset-password/:id/:token',(req,res,next)=>{
-    const {id,token} =req.params
-    const {password, password2}= req.body
-    if (id!==User.id) {
-        res.send('invalid id')
-        return
-    }
-    const secret = JWT_SECRET + user.password
-    try {
-        const payload = jwt.verify(token, secret)
-        //validate password and password2 should match exoress ir joi validator
-        //find the user with the payload email and id and finally update with new password
-        //always hash the password before saving
-        user.password = password
-        res.send(user)
-
-    } catch (error) {
-        console.log(error.message)
-        res.send(error.message)
-    }
-});
-router.post('/Refresh-token',async(req,res,next)=>{
-    res.send("Refresh-token route")
-})
-router.delete('/logout',async(req,res,next)=>{
-    res.send("logout route")
-})*/
 
 
 

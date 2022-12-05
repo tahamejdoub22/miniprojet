@@ -5,26 +5,23 @@ POST http://localhost:3000/auth/login
 content-type: application/json
 
 {
-"email": "sidki1@gmail.com",
-"password":"1234"
+"username": "sidki",
+"password":"1234azer"
 }
 ###register Route
 POST http://localhost:3000/auth/register
 content-type: application/json
 
 {
-"username":"lllllllssss",
-"email": "mm@gmail.com",
-"password":"1234",
-"role":"entreprise"
-}
-###Forget password
-POST http://localhost:3000/auth/forgot-password
-content-type: application/json
+    "FirstName":"taha",
+    "LastName":"majdoub",
+    "email":"tahamajdoub@gmail.com",
+    "avatar":"https://images.unsplash.com/photo-1611915387288-fd8d2f5f928b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80",
+"username":"sidki",
+"password":"1234azer"
 
-{
-"email": "tahamejdoub238@gmail.com"
 }
+
 
 ###Refresh token Route
 POST http://localhost:3000/auth/refresh-token
@@ -44,6 +41,7 @@ content-type: application/json
 "date":"Sunday 9 October 2022"
 
 }
+
 
 ###logout
 GET  http://localhost:3000/auth/getAllarticle

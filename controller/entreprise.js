@@ -1,10 +1,11 @@
 import { validationResult } from 'express-validator'; // Importer express-validator
+import recycleBin from '../Models/entreprise.model';
 
 import entreprise from '../Models/entreprise.model';
 
 export function getAll(req, res) {
 
-    entreprise
+    recycleBin
     .find({})
     // .where('onSale').equals(true) // Si 'OnSale' a la valeur true
     // .where('year').gt(2000).lt(2022) // Si 2000 < 'year' < 2022 
@@ -29,7 +30,7 @@ export function addOnce(req, res) {
     }
     else {
         // Invoquer la méthode create directement sur le modèle
-        entreprise
+        recycleBin
         .create({
             name: req.body.name,
 
@@ -44,7 +45,7 @@ export function addOnce(req, res) {
 }
 
 export function getOnce(req, res) {
-    entreprise
+    recycleBin
     .findOne({ "name": req.params.name })
     .then(doc => {
         res.status(200).json(doc);
@@ -53,7 +54,7 @@ export function getOnce(req, res) {
         res.status(500).json({ error: err });
     });
 }
-exports.updateUser = async (req, res) => {
+exports.updatebinrecyc = async (req, res) => {
   try{
     const entreprise = await entreprise.findById(req.params.id);
     Object.assign(entreprise, req.body);

@@ -1,14 +1,19 @@
 const mongoose = require("mongoose");
 
-const entreprise = mongoose.model(
-  "entreprise",
+const recycleBin = mongoose.model(
+  "recycleBin",
   new mongoose.Schema({
     name:String,
     Photo: String,
     address: String,
-    distance:String,
-     time:String
+     time:String,
+     Geometry: [
+      {
+        type: mongoose.Schema.Types.String,
+        ref: "Geometry"
+      }
+    ],
   })
 );
 
-module.exports = entreprise;
+module.exports = recycleBin;
