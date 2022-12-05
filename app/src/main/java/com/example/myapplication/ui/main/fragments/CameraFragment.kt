@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.main
+package com.example.myapplication.ui.main.fragments
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -20,10 +20,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [cameraFragment.newInstance] factory method to
+ * Use the [CameraFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class cameraFragment : Fragment() {
+class CameraFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -93,7 +93,7 @@ class cameraFragment : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            cameraFragment().apply {
+            CameraFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.main
+package com.example.myapplication.ui.main.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
 
-class pageActivity : AppCompatActivity() {
+class PageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -15,12 +15,12 @@ class pageActivity : AppCompatActivity() {
 
 // set on-click listener
         btn_click_me.setOnClickListener {
-            val myIntent = Intent(this, loginActivity::class.java)
+            val myIntent = Intent(this, LoginActivity::class.java)
 
             startActivity(myIntent)
         }
         btn_click_me1.setOnClickListener {
-            val myIntent = Intent(this, registerActivity::class.java)
+            val myIntent = Intent(this, RegisterActivity::class.java)
 
             startActivity(myIntent)
         }

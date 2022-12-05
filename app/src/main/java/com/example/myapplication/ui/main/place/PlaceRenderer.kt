@@ -17,7 +17,7 @@ package com.example.myapplication.ui.main.place
 import android.content.Context
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
-import com.example.myapplication.ui.main.BitmapHelper
+import com.example.myapplication.ui.main.utils.BitmapHelper
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.Marker

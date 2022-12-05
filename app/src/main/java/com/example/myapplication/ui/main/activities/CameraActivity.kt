@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.main
+package com.example.myapplication.ui.main.activities
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -10,7 +10,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
 
-class cameraActivity : AppCompatActivity() {
+class CameraActivity : AppCompatActivity() {
     private var our_request_code: Int = 123 //can number can be given
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

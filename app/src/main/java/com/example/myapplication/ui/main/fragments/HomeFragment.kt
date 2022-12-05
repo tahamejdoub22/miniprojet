@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.main
+package com.example.myapplication.ui.main.fragments
 
 import android.annotation.SuppressLint
 import android.os.Build

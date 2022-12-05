@@ -26,7 +26,7 @@
         android:requestLegacyExternalStorage="true">
 
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.main.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,13 +39,13 @@
                 android:value="" />
 
         </activity>
-        <activity android:name=".ui.main.loginActivity"/>
-        <activity android:name=".ui.main.pageActivity"/>
-        <activity android:name=".ui.main.photoActivity"/>
-        <activity android:name=".ui.main.registerActivity"/>
-        <activity android:name=".ui.main.cameraActivity"/>
-        <activity android:name=".ui.main.DashboardActivity"/>
-        <activity android:name=".ui.main.informationActivity"/>
+        <activity android:name=".ui.main.activities.LoginActivity"/>
+        <activity android:name=".ui.main.activities.PageActivity"/>
+        <activity android:name=".ui.main.activities.PhotoActivity"/>
+        <activity android:name=".ui.main.activities.RegisterActivity"/>
+        <activity android:name=".ui.main.activities.CameraActivity"/>
+        <activity android:name=".ui.main.activities.DashboardActivity"/>
+        <activity android:name=".ui.main.activities.InformationActivity"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

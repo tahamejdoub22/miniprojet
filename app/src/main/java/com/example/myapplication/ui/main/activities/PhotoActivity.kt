@@ -1,7 +1,6 @@
-package com.example.myapplication.ui.main
+package com.example.myapplication.ui.main.activities
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -33,7 +32,7 @@ import java.util.concurrent.ExecutorService
  *
  * @constructor Create empty Photo activity
  */
-class photoActivity:  AppCompatActivity() {
+class PhotoActivity:  AppCompatActivity() {
     private lateinit var viewBinding: ActivityMainBinding
 
     private var imageCapture: ImageCapture? = null

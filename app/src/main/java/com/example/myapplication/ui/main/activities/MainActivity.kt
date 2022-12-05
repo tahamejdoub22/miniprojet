@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.main
+package com.example.myapplication.ui.main.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +18,8 @@ class MainActivity : AppCompatActivity() {
 
         imageview.setOnClickListener {
             // your code to perform when the user clicks on the ImageView
-            val myIntent = Intent(this, informationActivity::class.java)
+            //TODO: change this to login/register activity when you continue working
+            val myIntent = Intent(this, DashboardActivity::class.java)
 
             startActivity(myIntent)     }
     }

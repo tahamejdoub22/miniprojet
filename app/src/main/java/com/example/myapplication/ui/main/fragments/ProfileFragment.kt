@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.main
+package com.example.myapplication.ui.main.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
@@ -16,7 +15,6 @@ import com.example.myapplication.ui.main.Adapter.MaterialAdapter
 import com.example.myapplication.ui.main.data.model.MList
 import com.example.myapplication.ui.main.data.model.Materials
 import com.example.myapplication.ui.main.data.retrofit.APIClient
-import com.google.android.material.button.MaterialButton
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Retrofit

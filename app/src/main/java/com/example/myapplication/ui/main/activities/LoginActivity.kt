@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.main
+package com.example.myapplication.ui.main.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,7 @@ import com.example.myapplication.ui.main.data.retrofit.APIClient
 import com.example.myapplication.ui.main.data.retrofit.RetrofitClient
 
 
-class loginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     private lateinit var binding:ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,7 +75,7 @@ class loginActivity : AppCompatActivity() {
                     Log.d("LoggingActivity",""+response.body()?.username)
 
                     //change informationactivity to homeactivity wala haja hakka
-                    val intent = Intent(this@loginActivity, DashboardActivity::class.java)
+                    val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
                     intent.putExtra("username",response.body()?.username)
                     startActivity(intent)
                     }

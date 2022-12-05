@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.main
+package com.example.myapplication.ui.main.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,7 @@ import com.example.myapplication.ui.main.data.model.UserSignUpRequest
 import com.example.myapplication.ui.main.data.retrofit.APIClient
 import com.example.myapplication.ui.main.data.retrofit.RetrofitClient
 
-class registerActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: RegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -106,7 +106,7 @@ class registerActivity : AppCompatActivity() {
                 if(response.isSuccessful()){
                     Log.d("RegisterActivity",response.body().toString())
                     //change informationactivity to homeactivity wala haja hakka
-                    val intent = Intent(this@registerActivity, informationActivity::class.java)
+                    val intent = Intent(this@RegisterActivity, InformationActivity::class.java)
                     startActivity(intent)
                 }
                 else {
