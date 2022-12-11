@@ -87,7 +87,7 @@ class HomeFragment : Fragment() {
 
         val recyclerView = requireView().findViewById<RecyclerView>(R.id.RecyclerView)
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.0.4:3000")
+            .baseUrl("http://192.168.1.157:3000")
             .addConverterFactory(GsonConverterFactory.create()).build()
 
         val api: APIClient = retrofit.create(APIClient::class.java)

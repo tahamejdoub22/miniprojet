@@ -2,6 +2,7 @@ package com.google.codelabs.buildyourfirstmap.place
 
 import android.content.Context
 import com.example.myapplication.R
+import com.example.myapplication.ui.main.mapFragment
 import com.example.myapplication.ui.main.place.Place
 
 import com.google.gson.Gson
@@ -12,7 +13,7 @@ import java.io.InputStreamReader
 /**
  * Reads a list of place JSON objects from the file places.json
  */
-class PlacesReader(private val context: Context) {
+class PlacesReader(private val context: mapFragment) {
 
     // GSON object responsible for converting from JSON to a Place object
     private val gson = Gson()

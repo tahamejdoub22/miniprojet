@@ -1,11 +1,9 @@
 package com.example.myapplication.ui.main
 
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityInformationBinding
 import com.example.myapplication.ui.main.place.Place

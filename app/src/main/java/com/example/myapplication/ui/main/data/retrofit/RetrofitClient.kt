@@ -11,7 +11,7 @@ object RetrofitClient {
         var httpLoggingInterceptor =
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         var okHttpClient = OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()
-        var retrofit: Retrofit = retrofit2.Retrofit.Builder().baseUrl("http://192.168.0.4:3000")
+        var retrofit: Retrofit = retrofit2.Retrofit.Builder().baseUrl("http://192.168.1.157:3000")
             .addConverterFactory(GsonConverterFactory.create()).client(okHttpClient).build()
         return retrofit
     }
