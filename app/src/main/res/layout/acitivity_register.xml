@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RegisterActivity">
+<FrameLayout android:id="@+id/frameCreateaccount"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylewhite_A700">
+        <LinearLayout android:id="@+id/linearColumngetplentythirtyone"
+            android:layout_gravity="top|center"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <FrameLayout android:id="@+id/frameStackgetplentythirtyone"
+                android:layout_gravity="start"
+                android:layout_height="286dp" android:layout_width="412dp">
+
+                <ImageView
+                    android:id="@+id/logoregister"
+                    android:layout_width="104dp"
+                    android:layout_height="125dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="55dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_getplenty"
+                    />
+
+                <TextView
+                    android:id="@+id/txtH4BoldDesktop"
+                    style="@style/txtInterbold25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="140dp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginBottom="90dp"
+                    android:lineSpacingExtra="1dp"
+                    android:singleLine="true"
+                    android:text="SEARCH&amp;RECYCLE"
+                    android:textSize="20sp" />
+
+                <ProgressBar
+                    android:id="@+id/prgbar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtCreateyourAcc"
+                    style="@style/txtInterbold20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="60dp"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="1dp"
+                    android:singleLine="true"
+                    android:text="Create your Account" />
+
+                <LinearLayout android:id="@+id/linearInputMaster"
+                    android:layout_gravity="bottom|center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical" style="@style/groupStylegreen_800">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/username_register"
+                        style="@style/etSolidRoundedOutline"
+                        android:layout_width="387dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rectangle_bg_white_a700_border_green_800_radius_8"
+                        android:ellipsize="end"
+                        android:hint="@string/lbl_user_name"
+                        android:inputType="text"
+                        android:lineSpacingExtra="1dp"
+                        android:paddingStart="12dp"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="30dp"
+                        android:paddingBottom="14dp"
+                        android:singleLine="true"
+                        android:text="Username"
+                        android:textColorHint="@color/gray_500"
+                        tools:ignore="Autofill" />
+                </LinearLayout>
+            </FrameLayout>
+            <LinearLayout android:gravity="center_horizontal"
+                android:id="@+id/linearInputMaster1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical" style="@style/groupStylegreen_800">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:background="@drawable/rectangle_bg_white_a700_border_green_800_radius_8"
+                    android:ellipsize="end"
+                    android:hint="@string/lbl_email"
+                    android:id="@+id/email_register"
+                    android:inputType="textEmailAddress"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:lineSpacingExtra="1dp"
+                    android:paddingBottom="14dp"
+                    android:paddingEnd="30dp"
+                    android:paddingStart="12dp"
+                    android:paddingTop="14dp"
+                    android:singleLine="true"
+                    android:text="Email"
+                    android:textColorHint="@color/gray_500"
+                    style="@style/etSolidRoundedOutline" tools:ignore="Autofill"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_horizontal"
+                android:id="@+id/linearInputMaster2"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="43dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical" style="@style/groupStylegreen_800">
+                <LinearLayout android:id="@+id/linearRowusernameTwo"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal" style="@style/groupStylewhite_7">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txt_passregister"
+                        style="@style/txtInterregular16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_weight="0"
+
+                        android:text="Password" />
+                    <ImageView android:id="@+id/imageClock"
+                        android:layout_height="17dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginStart="263dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_width="19dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_clock"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_clock"/>
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn_register"
+                style="@style/btnSolidRounded"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:layout_marginStart="2dp"
+
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+
+                android:lineSpacingExtra="1dp"
+                android:paddingStart="30dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="13dp"
+                android:singleLine="true"
+                android:text="Sign Me In !"
+                android:background="@color/color_1"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <LinearLayout android:id="@+id/linearRowlinethree"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <View android:background="@color/gray_501"
+                    android:id="@+id/lineLineThree"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.3" android:layout_width="0dp"/>
+
+                <TextView
+                    android:id="@+id/txtOrsigninwith"
+                    style="@style/txtIntermedium16"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_weight="0.31"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="1dp"
+                    android:singleLine="true"
+                    android:text="Or Sign in with " />
+                <View android:background="@color/gray_501"
+                    android:id="@+id/lineLineFour"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.39" android:layout_width="0dp"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="end"
+                android:id="@+id/linearRowconfirmation"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="101dp"
+                android:layout_marginStart="101dp"
+                android:layout_marginTop="66dp"
+                android:layout_width="wrap_content" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtConfirmation"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="0.77"
+                    android:layout_width="0dp"
+                    android:lineSpacingExtra="1dp"
+                    android:singleLine="true"
+                    android:text="Have an account"
+                    style="@style/txtInterbold15" />
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtLogin"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="0.23"
+                    android:layout_width="0dp"
+                    android:lineSpacingExtra="1dp"
+                    android:singleLine="true"
+                    android:text="Login"
+                    style="@style/txtInterbold15_1" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
