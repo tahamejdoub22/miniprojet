@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.gmail.apigeoneer.miniprojets">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -9,13 +10,16 @@
         android:exported="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:enableOnBackInvokedCallback="true"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ViewPager2WithNavigationComponentDemo"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="tiramisu">
+
         <activity
-            android:name=".photoActivity"
+            android:name=".activity.photoActivity"
             android:exported="false"
             android:label="@string/title_activity_photo"
             android:theme="@style/Theme.ViewPager2WithNavigationComponentDemo.NoActionBar">
@@ -24,7 +28,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +37,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".onboarding.ui.login.LoginActivity" />
-        <activity android:name=".DashboardActivity" />
+        <activity android:name=".activity.DashboardActivity" />
     </application>
 
 </manifest>

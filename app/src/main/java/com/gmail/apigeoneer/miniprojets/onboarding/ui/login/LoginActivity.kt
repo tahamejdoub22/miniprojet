@@ -4,31 +4,16 @@ package com.gmail.apigeoneer.miniprojets.onboarding.ui.login
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NO_HISTORY
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
-import com.example.myapplication.ui.main.data.retrofit.RetrofitClient
-import com.gmail.apigeoneer.miniprojets.DashboardActivity
-import com.gmail.apigeoneer.miniprojets.HomeFragment
-import com.gmail.apigeoneer.miniprojets.R
+import com.gmail.apigeoneer.miniprojets.activity.DashboardActivity
 import com.gmail.apigeoneer.miniprojets.databinding.ActivityLoginBinding
-import com.gmail.apigeoneer.miniprojets.databinding.ActivityMainBinding
 import com.gmail.apigeoneer.miniprojets.onboarding.model.BaseResponse
-import com.gmail.apigeoneer.miniprojets.onboarding.model.LoginRequest
 import com.gmail.apigeoneer.miniprojets.onboarding.model.LoginResponse
 import com.gmail.apigeoneer.miniprojets.onboarding.model.sessionManager
-import com.gmail.apigeoneer.miniprojets.onboarding.network.UserApi
-import com.gmail.apigeoneer.miniprojets.onboarding.network.userRepository
 import com.gmail.apigeoneer.miniprojets.onboarding.ui.login.viewmodel.LoginViewModel
-import com.gmail.apigeoneer.miniprojets.onboarding.util.CustomeProgressDialog
 
 
 class LoginActivity : AppCompatActivity() {

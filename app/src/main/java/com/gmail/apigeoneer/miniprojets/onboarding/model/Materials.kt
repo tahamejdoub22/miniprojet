@@ -3,6 +3,9 @@ package com.gmail.apigeoneer.miniprojets.onboarding.model
 import com.google.gson.annotations.SerializedName
 
 data class Materials(
+    @SerializedName("success")
+    val success: Boolean,
+
 
     @SerializedName("id")
     val id: String,

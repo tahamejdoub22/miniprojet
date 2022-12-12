@@ -1,4 +1,4 @@
-package com.gmail.apigeoneer.miniprojets
+package com.gmail.apigeoneer.miniprojets.activity
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.gmail.apigeoneer.miniprojets.R
 import com.gmail.apigeoneer.miniprojets.databinding.ActivityPhotoBinding
 
 class photoActivity : AppCompatActivity() {

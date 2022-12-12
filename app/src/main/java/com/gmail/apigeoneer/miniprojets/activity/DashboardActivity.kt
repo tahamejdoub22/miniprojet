@@ -1,11 +1,18 @@
-package com.gmail.apigeoneer.miniprojets
+package com.gmail.apigeoneer.miniprojets.activity
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.gmail.apigeoneer.miniprojets.First2Fragment
+import com.gmail.apigeoneer.miniprojets.HomeFragment
+import com.gmail.apigeoneer.miniprojets.R
+import com.gmail.apigeoneer.miniprojets.Second2Fragment
 
 import com.gmail.apigeoneer.miniprojets.databinding.DashboardBinding
+import com.gmail.apigeoneer.miniprojets.fragment.LearnFragment
+import com.gmail.apigeoneer.miniprojets.fragment.mapFragment
+import com.gmail.apigeoneer.miniprojets.fragment.profileFragment
 
 
 class DashboardActivity : AppCompatActivity() {
@@ -16,13 +23,13 @@ class DashboardActivity : AppCompatActivity() {
 
         binding = DashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setCurrentFragment(HomeFragment())
+        setCurrentFragment(com.gmail.apigeoneer.miniprojets.fragment.HomeFragment())
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.miHome -> replaceFragment(HomeFragment())
-                R.id.miLearn -> replaceFragment(First2Fragment())
-                R.id.miLocation -> replaceFragment(Second2Fragment())
-                R.id.miProfile -> replaceFragment(HomeFragment())
+                R.id.miHome -> replaceFragment(com.gmail.apigeoneer.miniprojets.fragment.HomeFragment())
+                R.id.miLearn -> replaceFragment(LearnFragment())
+                R.id.miLocation -> replaceFragment(mapFragment())
+                R.id.miProfile -> replaceFragment(profileFragment())
 
                 else -> {
 
