@@ -36,7 +36,7 @@ object WebServiceClient {
 
             if (retrofit == null) {
                 retrofit = Retrofit.Builder()
-                        .baseUrl("https://backend-5y8uihs3w-tahamejdoub22.vercel.app/")
+                        .baseUrl("https://server-node-tahamejdoub22.vercel.app/")
                         .addConverterFactory(GsonConverterFactory.create())
                     .client(okHttpClient).build()            }
             return retrofit!!

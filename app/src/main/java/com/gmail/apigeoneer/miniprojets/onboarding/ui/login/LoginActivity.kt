@@ -4,6 +4,7 @@ package com.gmail.apigeoneer.miniprojets.onboarding.ui.login
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NO_HISTORY
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Toast
@@ -14,6 +15,7 @@ import com.gmail.apigeoneer.miniprojets.activity.DashboardActivity
 import com.gmail.apigeoneer.miniprojets.databinding.ActivityLoginBinding
 import com.gmail.apigeoneer.miniprojets.onboarding.model.BaseResponse
 import com.gmail.apigeoneer.miniprojets.onboarding.model.LoginResponse
+import com.gmail.apigeoneer.miniprojets.onboarding.model.User
 import com.gmail.apigeoneer.miniprojets.onboarding.model.sessionManager
 import com.gmail.apigeoneer.miniprojets.onboarding.ui.login.viewmodel.LoginViewModel
 
@@ -54,6 +56,7 @@ class LoginActivity : AppCompatActivity() {
 
 
                     val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
+
 
                     startActivity(intent)
                 }
@@ -109,6 +112,7 @@ class LoginActivity : AppCompatActivity() {
 
 
             data?.data?.token?.let { sessionManager.saveAuthToken(this, it) }
+
             navigateToHome()
         }
     }

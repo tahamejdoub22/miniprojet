@@ -24,7 +24,7 @@ object ApiClient {
         get() {
             if(mRetrofit == null){
                 mRetrofit = Retrofit.Builder()
-                    .baseUrl("https://backend-5y8uihs3w-tahamejdoub22.vercel.app/")
+                    .baseUrl("https://server-node-tahamejdoub22.vercel.app/")
                     .client(mOkHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()

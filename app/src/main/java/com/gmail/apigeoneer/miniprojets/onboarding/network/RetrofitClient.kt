@@ -12,7 +12,7 @@ object RetrofitClient {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         var okHttpClient = OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()
         var retrofit: Retrofit = retrofit2.Retrofit.Builder()
-            .baseUrl("https://backend-5y8uihs3w-tahamejdoub22.vercel.app/")
+            .baseUrl("https://server-node-tahamejdoub22.vercel.app/")
             .addConverterFactory(GsonConverterFactory.create()).client(okHttpClient).build()
         return retrofit
 

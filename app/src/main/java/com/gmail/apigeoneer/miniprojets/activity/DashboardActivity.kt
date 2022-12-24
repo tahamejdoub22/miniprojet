@@ -4,16 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.gmail.apigeoneer.miniprojets.First2Fragment
-import com.gmail.apigeoneer.miniprojets.HomeFragment
+
 import com.gmail.apigeoneer.miniprojets.R
-import com.gmail.apigeoneer.miniprojets.Second2Fragment
 
 import com.gmail.apigeoneer.miniprojets.databinding.DashboardBinding
 import com.gmail.apigeoneer.miniprojets.fragment.LearnFragment
-import com.gmail.apigeoneer.miniprojets.fragment.mapFragment
+import com.gmail.apigeoneer.miniprojets.fragment.MapFragment
 import com.gmail.apigeoneer.miniprojets.fragment.profileFragment
-import com.gmail.apigeoneer.miniprojets.onboarding.network.ProfileActivity
+
 
 
 class DashboardActivity : AppCompatActivity() {
@@ -29,7 +27,7 @@ class DashboardActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.miHome -> replaceFragment(com.gmail.apigeoneer.miniprojets.fragment.HomeFragment())
                 R.id.miLearn -> replaceFragment(LearnFragment())
-                R.id.miLocation -> replaceFragment(mapFragment())
+                R.id.miLocation -> replaceFragment(MapFragment())
                 R.id.miProfile -> replaceFragment(profileFragment())
 
                 else -> {
@@ -41,7 +39,7 @@ class DashboardActivity : AppCompatActivity() {
 
         }
         binding.fab.setOnClickListener {
-            val myIntent = Intent(this, ProfileActivity::class.java)
+            val myIntent = Intent(this, PhotoActivity::class.java)
 
             startActivity(myIntent)     }
 
