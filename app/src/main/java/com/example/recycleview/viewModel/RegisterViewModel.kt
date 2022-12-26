@@ -16,16 +16,23 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
     val userRepo = userRepository()
     val registerResult: MutableLiveData<BaseResponse<RegisterResponse>> = MutableLiveData()
 
-    fun registerUser(name:String ,email: String, pwd: String) {
+    fun registerUser(Firstname:String ,LastName: String, Email: String,Phone:String,Country:String,Address:String,City:String,CodePostal:String,Password:String) {
 
         registerResult.value = BaseResponse.Loading()
         viewModelScope.launch {
             try {
 
                 val registerRequest = RegisterRequest(
-                    name = name,
-                    password = pwd,
-                    email = email
+                    FirstName = Firstname,
+                    LastName = LastName,
+                    Email = Email,
+                    Phone = Phone,
+                    Country = Country,
+                    Address = Address,
+                    City = City,
+                    CodePostal = CodePostal,
+                    Password = Password
+
                 )
                 val response = userRepo.registerUser(registerRequest = registerRequest)
                 if (response?.code() == 201) {

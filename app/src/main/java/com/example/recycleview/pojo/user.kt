@@ -26,7 +26,7 @@ data class user(
     val city: String,
     @SerializedName("codePostal")
 
-    val codePostal: Int,
+    val codePostal: String,
     @SerializedName("Phone")
     val phone: String,
     @SerializedName("country")
