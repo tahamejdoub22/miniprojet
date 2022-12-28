@@ -17,14 +17,15 @@
         android:id="@+id/screen1_iv"
     android:layout_marginBottom="@dimen/_300sdp"
     />
+
     <TextView
         android:id="@+id/findText"
-        android:layout_width="301dp"
-        android:layout_height="63dp"
+        android:layout_width="302dp"
+        android:layout_height="70dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/interbold"
-android:gravity="center"
-        android:text="find your nearest recycle station"
+        android:gravity="center"
+        android:text="Find your nearest recycling events"
         android:textColor="@color/black"
 
         android:textSize="26sp"
@@ -37,20 +38,19 @@ android:gravity="center"
 
     <TextView
         android:id="@+id/descBoard"
-        android:layout_width="221dp"
-        android:layout_height="119dp"
+        android:layout_width="291dp"
+        android:layout_height="169dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="60dp"
         android:fontFamily="@font/interregular"
-        android:text="amet_minim_mollit_non_deserunt_ullamco_est_sit_aliqua_dolor_do_amet_sint_velit_officia_consequat_duis_enim_velit_mollit_exercitation_veniam_consequat_sunt_nostrud_amet"
-
+        android:text="Click on the map icon to see all available recycling events near you. Join other groups to help clean the environment and share rewarding points with them ! "
         android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/screen1_iv"
         app:layout_constraintTop_toBottomOf="@id/findText"
-        app:layout_constraintVertical_bias="0.008"
-        />
+        app:layout_constraintVertical_bias="0.008" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

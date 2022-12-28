@@ -72,22 +72,6 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/singUp"
-                    android:text="Sing Up"
-                    android:paddingTop="5dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/color_1"
-                    android:textSize="16sp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:paddingBottom="5dp"
-                    android:paddingRight="15dp"
-                    android:paddingLeft="15dp"
-                    android:textStyle="bold|normal"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
 
 
             </LinearLayout>
@@ -262,18 +246,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <TextView
-                android:text="OR"
-                android:textSize="18sp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:textStyle="normal"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:textColor="#474646"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
             <LinearLayout
                 android:orientation="horizontal"
                 android:gravity="center"
@@ -281,16 +253,6 @@
                 android:layout_marginBottom="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <ImageView
-                    android:src="@drawable/icons8_facebook"
-                    android:layout_margin="10dp"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"/>
-                <ImageView
-                    android:src="@drawable/icons8_google"
-                    android:layout_margin="10dp"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"/>
 
 
 

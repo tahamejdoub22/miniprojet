@@ -3,9 +3,9 @@ package com.example.recycleview.pojo
 import com.google.gson.annotations.SerializedName
 
 data class RegisterRequest(
-    @SerializedName("firstName")
+    @SerializedName("FirstName")
     var FirstName:String,
-    @SerializedName("lastName")
+    @SerializedName("LastName")
     var LastName: String,
     @SerializedName("email")
     var Email: String,

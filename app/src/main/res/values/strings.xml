@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="map">Map</string>
     <string name="home">Home</string>
-    <string name="category">category</string>
+    <string name="category">Categories</string>
     <string name="Profile">Profile</string>
     <string name="title_activity_camera">CameraActivity</string>
     <!-- Strings used for fragments for navigation -->
@@ -15,7 +15,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="home_text1">what would you like to Recycle</string>
+    <string name="home_text1">What would you like to Recycle</string>
     <string name="login">Login</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>

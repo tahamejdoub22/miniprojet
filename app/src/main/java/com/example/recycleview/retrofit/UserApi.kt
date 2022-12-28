@@ -13,7 +13,7 @@ interface UserApi {
 
     @POST("api/users/login")
     suspend fun loginUser(@Body loginRequest: LoginRequest): Response<user>
-    @POST("api/users/")
+    @POST("api/users")
     suspend fun registerUser(@Body registerRequest: RegisterRequest): Response<RegisterResponse>
 
 

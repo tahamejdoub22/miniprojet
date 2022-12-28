@@ -19,9 +19,9 @@ data class RegisterResponse(
         var id: String,
         @SerializedName("Id")
         var id2: Int,
-        @SerializedName("firstName")
+        @SerializedName("FirstName")
         var FirstName: String,
-        @SerializedName("lastName")
+        @SerializedName("LastName")
         var LastName: String,
         @SerializedName("phone")
         var Phone: String,

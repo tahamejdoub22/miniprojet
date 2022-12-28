@@ -60,10 +60,10 @@ class ProfileFragment : Fragment() {
             Glide.with(this)
                 .load(Materiel!!.avatar)
                 .into(binding.imgProfile)
-            binding.txtUsername.text = Materiel.firstname
+            binding.txtUsername.text = Materiel.FirstName
             binding.email.text = Materiel.email
-            binding.designation.text = Materiel.lastname
-            binding.txtUsername.text = Materiel.firstname
+            binding.designation.text = Materiel.LastName
+            binding.txtUsername.text = Materiel.FirstName
             binding.country.text = Materiel.country
             binding.address.text = Materiel.address
             binding.code.text = Materiel.codePostal.toString()

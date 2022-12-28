@@ -17,6 +17,12 @@
     <color name="tras_white">#66FFFFFF</color>
     <color name="light_gray">#EFEFEF</color>
     <color name="color">#E0D2D2</color>
+    <color name="gray_901">#111827</color>
+    <color name="gray_501">#ada3a3</color>
+    <color name="bluegray_50">#efeff4</color>
+    <color name="green_400">#67ce67</color>
+    <color name="teal_800">#226d52</color>
+
     <color name="gray_300_4c">#4ce3e3e3</color>
 
 </resources>

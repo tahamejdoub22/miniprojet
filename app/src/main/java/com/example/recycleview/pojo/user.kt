@@ -8,10 +8,10 @@ data class user(
     val message: String,
     @SerializedName("FirstName")
 
-    val firstname: String,
+    val FirstName: String,
     @SerializedName("LastName")
 
-    val lastname: String,
+    val LastName: String,
     @SerializedName("_id")
 
     val id: String,

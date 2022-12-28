@@ -14,7 +14,7 @@ import retrofit2.http.Part
 interface MyApi {
 
     @Multipart
-    @POST("Api.php?apicall=upload")
+    @POST("th/singleFile")
     fun uploadImage(
         @Part image: MultipartBody.Part,
         @Part("desc") desc: RequestBody
@@ -23,7 +23,7 @@ interface MyApi {
     companion object {
         operator fun invoke(): MyApi {
             return Retrofit.Builder()
-                .baseUrl("https://appsgeneric.com/")
+                .baseUrl("https://nodeserver-rho.vercel.app/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(MyApi::class.java)

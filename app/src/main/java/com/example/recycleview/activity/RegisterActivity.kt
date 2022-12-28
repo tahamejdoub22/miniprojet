@@ -1,5 +1,6 @@
 package com.example.recycleview.activity
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentResolver
 import android.content.Intent
@@ -82,19 +83,19 @@ class RegisterActivity : AppCompatActivity(), UploadRequestBody.UploadCallBack {
             }
         }
 
-         binding.singIn.setOnClickListener {
-             doRegister()
+        binding.singIn.setOnClickListener {
+            doRegister()
 
 
-         }
+        }
 
 
     }
 
     private fun uploadImage() {
         if (selectedImageUri == null) {
-         //   layout_root.snackbar("Select an Image First")
-            Log.e("RegisterActivity","select image first")
+            //   layout_root.snackbar("Select an Image First")
+            Log.e("RegisterActivity", "select image first")
             return
         }
         val parcelFileDescriptor = contentResolver.openFileDescriptor(
@@ -112,7 +113,7 @@ class RegisterActivity : AppCompatActivity(), UploadRequestBody.UploadCallBack {
                 file.name,
                 body
             ),
-            RequestBody.create("multipart/form-data".toMediaTypeOrNull(),"json")
+            RequestBody.create("multipart/form-data".toMediaTypeOrNull(), "json")
         ).enqueue(object : Callback<UploadResponse> {
             override fun onResponse(
                 call: Call<UploadResponse>,
@@ -120,14 +121,14 @@ class RegisterActivity : AppCompatActivity(), UploadRequestBody.UploadCallBack {
             ) {
                 response.body()?.let {
 
-                   // layout_root.snackbar(it.message)
+                    // layout_root.snackbar(it.message)
 
                     binding.progBar.progress = 100
                 }
             }
 
             override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
-               // layout_root.snackbar(t.message!!)
+                // layout_root.snackbar(t.message!!)
                 binding.progBar.progress = 0
 
             }
@@ -145,6 +146,7 @@ class RegisterActivity : AppCompatActivity(), UploadRequestBody.UploadCallBack {
             startActivityForResult(it, REQUEST_CODE_IMAGE)
         }
     }
+
     companion object {
         const val REQUEST_CODE_IMAGE = 101
     }
@@ -162,7 +164,6 @@ class RegisterActivity : AppCompatActivity(), UploadRequestBody.UploadCallBack {
     }
 
 
-
     private fun navigateToHome() {
         val intent = Intent(this, BaseActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -171,16 +172,26 @@ class RegisterActivity : AppCompatActivity(), UploadRequestBody.UploadCallBack {
     }
 
     private fun doRegister() {
-          val FirstName= binding.firstname.text.toString()
-          val LastName =  binding.lastname.text.toString()
-        val Email =  binding.registerEmail.text.toString()
-        val Phone =  binding.Phone.text.toString()
-        val Country =  binding.country.text.toString()
-        val Address =  binding.Address.text.toString()
-        val City =  binding.city.text.toString()
-           val CodePostal = binding.codepostal.text.toString()
-        val Password = binding.passwords.text.toString()
-           viewModel.registerUser(Firstname = FirstName , LastName = LastName, Email  = Email, Phone = Phone,Country=Country,Address = Address,City = City,CodePostal = CodePostal,Password=Password)
+        val FirstName = binding.Firstname.text.toString()
+        val LastName = binding.Lastname.text.toString()
+        val email = binding.registerEmail.text.toString()
+        val Phone = binding.Phone.text.toString()
+        val country = binding.country.text.toString()
+        val address = binding.Address.text.toString()
+        val city = binding.city.text.toString()
+        val codePostal = binding.codepostal.text.toString()
+        val password = binding.passwords.text.toString()
+        viewModel.registerUser(
+            FirstName = FirstName,
+            LastName = LastName,
+            email = email,
+            Phone = Phone,
+            country = country,
+            address = address,
+            city = city,
+            codePostal = codePostal,
+            password = password
+        )
 
     }
 
