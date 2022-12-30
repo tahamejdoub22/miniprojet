@@ -39,16 +39,6 @@
     
     
 </com.google.android.material.appbar.AppBarLayout>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-       android:id="@+id/floatingb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_favorite"
-        app:backgroundTint="@color/teal_200"
-        android:tint="@color/white"
-        app:layout_anchor="@id/appBar"
-        app:layout_anchorGravity="bottom|end"
-        android:layout_margin="@dimen/_10sdp" />
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -78,7 +68,16 @@ android:text="Category:gggg"
                     android:drawableTint="@color/black"
                     android:layout_weight="1"/>
 
-
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status:gggg"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:drawableLeft="@drawable/ic_baseline_recycling_24"
+                    android:drawableTint="@color/black"
+                    android:layout_weight="1"/>
 
 
 

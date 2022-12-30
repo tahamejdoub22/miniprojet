@@ -32,7 +32,7 @@ class BasicAuthClient <T> {
         .create()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://nodeserver-rho.vercel.app/")
+        .baseUrl("https://nodeserver-38hw.vercel.app/")
         .client(client)
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()

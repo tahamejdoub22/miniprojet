@@ -23,7 +23,7 @@ interface MyApi {
     companion object {
         operator fun invoke(): MyApi {
             return Retrofit.Builder()
-                .baseUrl("https://nodeserver-rho.vercel.app/")
+                .baseUrl("https://nodeserver-38hw.vercel.app/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(MyApi::class.java)

@@ -18,6 +18,8 @@ private lateinit var Materielid:String
 private lateinit var MaterielName:String
 private lateinit var MaterielThum:String
 private lateinit var MaterielType:String
+private lateinit var MaterielStatus:String
+
 private lateinit var Materieldescription:String
 private lateinit var materielMvvm:MaterielViewModel
 class MaterielActivity : AppCompatActivity() {
@@ -57,6 +59,8 @@ Glide.with(applicationContext)
 binding.CollapsingTollbar.setExpandedTitleColor(resources.getColor(R.color.white))
         binding.category.text= MaterielType
         binding.Instruction.text= Materieldescription
+        binding.status.text= MaterielStatus
+
 
     }
 
@@ -67,20 +71,19 @@ val intent=intent
         MaterielThum=intent.getStringExtra(HomeFragment.Materiel_thum)!!
         MaterielType=intent.getStringExtra(HomeFragment.Materiel_type)!!
         Materieldescription=intent.getStringExtra(HomeFragment.Materiel_description)!!
+        MaterielStatus=intent.getStringExtra(HomeFragment.Materiel_Status)!!
 
 
 
     }
     private fun loadingCase(){
         binding.progressBar.visibility=View.VISIBLE
-binding.floatingb.visibility=View.INVISIBLE
         binding.InstructionF.visibility=View.INVISIBLE
         binding.category.visibility=View.INVISIBLE
 
     }
     private fun onresponseCase(){
         binding.progressBar.visibility=View.INVISIBLE
-        binding.floatingb.visibility=View.VISIBLE
         binding.InstructionF.visibility=View.VISIBLE
         binding.category.visibility=View.VISIBLE
     }

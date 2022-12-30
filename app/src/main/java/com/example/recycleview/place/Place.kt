@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.main.place
+package com.example.recycleview.place
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.clustering.ClusterItem
 

@@ -49,6 +49,7 @@ class eventsActivity : AppCompatActivity() {
         binding.CollapsingTollbar.setExpandedTitleColor(resources.getColor(R.color.white))
         binding.snippet.text= eventsnipper
         binding.Instruction.text= eventdescription
+
     }
 
     private fun getMaterielInformationFromIntent() {
@@ -57,5 +58,7 @@ class eventsActivity : AppCompatActivity() {
         eventdescription=intent.getStringExtra(categoriesFragment.event_description)!!
         eventsName=intent.getStringExtra(categoriesFragment.title)!!
         eventsnipper=intent.getStringExtra(categoriesFragment.event_snippet)!!
-        eventsThum=intent.getStringExtra(categoriesFragment.event_thum)!!    }
+        eventsThum=intent.getStringExtra(categoriesFragment.event_thum)!!
+
+    }
 }

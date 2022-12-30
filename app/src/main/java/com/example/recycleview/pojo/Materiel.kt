@@ -21,5 +21,8 @@ data class Materiel(
     @SerializedName("type")
 
     val type: Type,
+    @SerializedName("status")
+
+    val status: String,
 
 )

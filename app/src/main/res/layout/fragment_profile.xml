@@ -103,6 +103,7 @@
             android:layout_marginStart="@dimen/_60ssp"
             android:fontFamily="@font/roboto"
             android:text="1000"
+            android:id="@+id/points"
             android:textColor="@color/color"
             android:textSize="@dimen/_14ssp"
             android:textStyle="bold"

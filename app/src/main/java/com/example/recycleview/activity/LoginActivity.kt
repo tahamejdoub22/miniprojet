@@ -27,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
         val token = sessionManager.getToken(this)
         if (!token.isNullOrBlank()) {
             navigateToHome()
@@ -52,6 +53,7 @@ class LoginActivity : AppCompatActivity() {
 
                 is BaseResponse.Error -> {
                     processError(it.msg)
+                    sessionManager.clearData(this.applicationContext)
                 }
                 else -> {
                     stopLoading()
@@ -66,10 +68,14 @@ class LoginActivity : AppCompatActivity() {
                 val unm = sp1.getString("Unm","def")
                 if(unm == "def"){
                     var intent = Intent(applicationContext, LoginActivity::class.java)
-                    startActivity(intent)}
+                    startActivity(intent)
+                    sessionManager.clearData(this.applicationContext)
+
+                }
                 else {
                     var intent = Intent(applicationContext, BaseActivity::class.java)
-                    startActivity(intent)}
+                    startActivity(intent)
+                }
 
         }
 

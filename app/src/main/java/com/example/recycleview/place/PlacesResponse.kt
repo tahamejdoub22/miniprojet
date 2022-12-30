@@ -12,10 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.codelabs.buildyourfirstmap.place
+package com.example.recycleview.place
 
 
-import com.example.myapplication.ui.main.place.Place
 import com.google.android.gms.maps.model.LatLng
 
 data class PlaceResponse(

@@ -3,20 +3,17 @@ package com.example.recycleview.activity
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Size
-import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleOwner
@@ -30,7 +27,7 @@ import com.google.mlkit.vision.objects.ObjectDetection
 import com.google.mlkit.vision.objects.ObjectDetector
 import com.google.mlkit.vision.objects.custom.CustomObjectDetectorOptions
 import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
+
 
 class xcameraActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityPhotoBinding
@@ -42,11 +39,18 @@ class xcameraActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPhotoBinding
     private lateinit var objectDetector:ObjectDetector
     private lateinit var cameraProviderFuture:ListenableFuture<ProcessCameraProvider>
+    private val permissions = arrayOf(
+        "android.permission.CAMERA",
+        "android.hardware.camera.any"
+    )
 
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        val requestCode = 200
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(permissions, requestCode)
+        }
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_photo)
         // Request camera permissions

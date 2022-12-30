@@ -34,7 +34,9 @@ data class user(
     @SerializedName("email")
 
     val email: String,
+    @SerializedName("points")
 
+    val points: Int,
     @SerializedName("token")
 
     val token: String

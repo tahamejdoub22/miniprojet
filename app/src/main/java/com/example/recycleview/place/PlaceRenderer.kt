@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.example.myapplication.ui.main.place
+package com.example.recycleview.place
 
 import android.content.Context
 import androidx.core.content.ContextCompat

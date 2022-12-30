@@ -43,7 +43,9 @@ private lateinit var categoriesAdapter: CategoryAdapter
     const val Materiel_thum="package com.example.recycleview.Fragment.Materiel_thumb"
     const val Materiel_type="package com.example.recycleview.Fragment.Materiel_type"
     const val Materiel_description="package com.example.recycleview.Fragment.Materiel_description"
-const val CATEGORY_ID="com.example.recycleview.Fragment.CATEGORY_ID"
+        const val Materiel_Status="package com.example.recycleview.Fragment.Materiel_Status"
+
+        const val CATEGORY_ID="com.example.recycleview.Fragment.CATEGORY_ID"
 
 
 }
@@ -112,6 +114,7 @@ popularItemsAdapter.onItemClick ={
     intent.putExtra(Materiel_id,materiel.id)
     intent.putExtra(Materiel_description,materiel.description)
     intent.putExtra(Materiel_thum,materiel.matrielImage)
+    intent.putExtra(Materiel_Status,materiel.status)
 
     startActivity(intent)
 }   }
@@ -138,6 +141,7 @@ binding.recycleview.apply {
             intent.putExtra(Materiel_thum,randomMateriel.matrielImage)
             intent.putExtra(Materiel_type,randomMateriel.type.type_name)
             intent.putExtra(Materiel_description,randomMateriel.description)
+            intent.putExtra(Materiel_Status,randomMateriel.status)
 
             startActivity(intent)
         }

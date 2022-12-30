@@ -8,7 +8,7 @@ object ApiService {
     var YOUR_TOKEN = ""
 
     private var retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl("https://nodeserver-rho.vercel.app/")
+        .baseUrl("https://nodeserver-38hw.vercel.app/")
         .addConverterFactory(GsonConverterFactory.create())
         .client(OkHttpClient.Builder().addInterceptor { chain ->
             val request = chain.request().newBuilder().addHeader("Authorization", "Bearer ${YOUR_TOKEN}").build()

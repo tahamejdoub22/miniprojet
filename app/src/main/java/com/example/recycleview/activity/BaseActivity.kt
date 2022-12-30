@@ -10,6 +10,7 @@ import com.example.recycleview.Fragment.categoriesFragment
 import com.example.recycleview.Fragment.mapFragment
 import com.example.recycleview.R
 import com.example.recycleview.databinding.ActivityBaseBinding
+import com.example.recycleview.retrofit.sessionManager
 
 class BaseActivity: AppCompatActivity() {
     private lateinit var binding :ActivityBaseBinding
@@ -48,7 +49,7 @@ class BaseActivity: AppCompatActivity() {
         }
     override fun onBackPressed() {
         moveTaskToBack(true)
-        super.onBackPressed()
+        sessionManager.clearData(this.applicationContext)
     }
     private fun replaceFragment(fragment: Fragment){
         val fragmentManager = supportFragmentManager

@@ -17,7 +17,7 @@ object RetrofitInstance {
         get()
     {
      val builder = Retrofit.Builder()
-        .baseUrl("https://nodeserver-rho.vercel.app/")
+        .baseUrl("https://nodeserver-38hw.vercel.app/")
         .addConverterFactory(GsonConverterFactory.create())
         .client(OkHttpClient.Builder().authenticator(object : Authenticator {
                 @Throws(IOException::class)

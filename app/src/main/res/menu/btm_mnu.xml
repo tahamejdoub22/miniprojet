@@ -6,7 +6,7 @@
         android:title="@string/home"
         android:icon="@drawable/img_home"/>
     <item android:id="@+id/miLearn"
-        android:title="@string/category"
+        android:title="@string/events"
         android:icon="@drawable/img_computer"/>
     <item android:id="@+id/placeholder"
         android:title=""/>

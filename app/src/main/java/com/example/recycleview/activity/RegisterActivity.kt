@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.recycleview.app.MyApp
 import com.example.recycleview.databinding.AcitivityRegisterBinding
 import com.example.recycleview.pojo.*
 import com.example.recycleview.retrofit.MyApi
@@ -207,7 +208,7 @@ class RegisterActivity : AppCompatActivity(), UploadRequestBody.UploadCallBack {
         if (!data?.token.isNullOrEmpty()) {
 
 
-            data?.token?.let { sessionManager.saveAuthToken(this, it) }
+            data?.token?.apply { sessionManager.getToken(MyApp.context).toString() }
             navigateToHome()
         }
 

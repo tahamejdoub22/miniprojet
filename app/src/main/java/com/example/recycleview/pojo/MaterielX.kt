@@ -23,5 +23,8 @@ data class MaterielX(
     val matrielImage: String,
     @SerializedName("type")
 
-    val type: TypeX
+    val type: TypeX,
+    @SerializedName("status")
+
+val status: String
 )
